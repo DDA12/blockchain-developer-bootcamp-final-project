@@ -48,8 +48,8 @@
 
   - ***Wallet:*** Only Metamask support.
 
-- ### **Current dApp functionalities**
-The NFTs metadata supported in the current version of the dApp are limited to: name, symbol and an image. 
+- ### **Current dApp functionalities**  
+  The NFTs metadata supported in the current version of the dApp are limited to: name, symbol and an image. 
   - Metamask Wallet detection, connection and sign in (to confirm ownership of account).  
   - Metamask Wallet Chain or Account changed.
   - Portfolio Creation (vcNFT contract created with information provided and media IPFS file created).

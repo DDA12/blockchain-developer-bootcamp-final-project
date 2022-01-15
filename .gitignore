@@ -1,0 +1,10 @@
+.env
+node_modules/
+_node_modules/
+.secret
+package-lock.json
+.vscode
+apiKeys*
+dist/*
+screencast
+checklist.txt

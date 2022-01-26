@@ -1,7 +1,7 @@
 import  "../../lib/ethers.5.5.1.umd.min.js";
 import { getEtherProviders } from '../ethSettings/ethSettingsSlice.js';
 import { getWalletProvider, walletChainIdChanged } from '../wallet/walletSlice.js';
-import {getLocalUriJWT, addTextFile, addFile} from '../ipfs/Ipfs.js';
+import { decentralizedStorage as DS } from '../ipfs/Ipfs.js';
 import {nftReadContracts} from '../registry/registrySlice.js';
 import { verifyJws, getNewEthDid, generateVc, signVerifiableCredential, getEthDid, getNewSigningEthDid, addSigningDelegate, getSigningDelegate } from '../../common/did.js';
 
@@ -25,7 +25,7 @@ const initialState = {
 };
 
 export const createNft = RTK.createAsyncThunk("nft/createNft", async (param, thunkAPI) => {
-    const cidImage = await addFile(param.metaData.image).catch((e) => {console.log(e); return e});
+    const cidImage = await DS.addUrl(param.metaData.image).catch((e) => {console.log(e); return e});
     if (typeof(cidImage) != 'string') return thunkAPI.rejectWithValue("addFileIpfs failed"); 
     const provider = getWalletProvider();
     const signer = provider.getSigner();
@@ -43,7 +43,7 @@ export const createNft = RTK.createAsyncThunk("nft/createNft", async (param, thu
     const vcPayload = generateVc(ethrDid.did, param.didSubject, param.metaData);
     ethrDid.signer = ethrDidDelegate.signer;
     const jws = await signVerifiableCredential(vcPayload, ethrDid).catch((e) => {return thunkAPI.rejectWithValue(e)});
-    const cidJws = await addTextFile(jws).catch((e) => {return thunkAPI.rejectWithValue(e)});
+    const cidJws = await DS.add(jws).catch((e) => {return thunkAPI.rejectWithValue(e)});
     const owner = await signer.getAddress();
     thunkAPI.dispatch(mintingTransactionSent());
     const writeContract = nftReadContracts[chainKey][param.contractAddress].connect(signer);
@@ -71,7 +71,8 @@ export const loadNfts = RTK.createAsyncThunk("nft/loadNfts", async (param, thunk
     return await Promise.all(allTokenIds.map(async (tokenIdBN) => {
             const tokenId = tokenIdBN.toNumber();
             return contract.getCoaURI(tokenId).then(async (uri) => {
-                const jws = await getLocalUriJWT(uri);
+                const file = await DS.get(uri)
+                const jws = await file.text();
                 const owner = await contract.ownerOf(tokenId).catch((e) => {console.log(e); return {};});
                 thunkAPI.dispatch(nftLoaded({tokenId, nft: { address: param.address, tokenId, owner, jws, jwsDecoded: window.didJwt.decodeJWT(jws, {})}}));
                 return jws;

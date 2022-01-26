@@ -1,7 +1,7 @@
 import  "../../lib/ethers.5.5.1.umd.min.js";
 import { getEtherProviders } from '../ethSettings/ethSettingsSlice.js';
 import { getWalletProvider, walletChainIdChanged } from '../wallet/walletSlice.js';
-import {addFile as addFileIpfs} from '../ipfs/Ipfs.js'
+import { decentralizedStorage as DS } from '../ipfs/Ipfs.js'
 
 export let nftReadContracts = {};
 
@@ -30,7 +30,7 @@ function addReadingContract(chainKey, portfolioAddress, etherProvider) {
 }
 
 export const createPortfolio = RTK.createAsyncThunk("registry/createPortfolio", async (param, thunkAPI) => {
-  const cid = await addFileIpfs(param.url).catch((e) => {console.log(e); return e});
+  const cid = await DS.addUrl(param.url).catch((e) => {console.log(e); return e});
     if (typeof(cid) != "string") return thunkAPI.rejectWithValue("addFileIpfs failed"); 
     const provider = getWalletProvider();
     const chainKey = param.chainKey;

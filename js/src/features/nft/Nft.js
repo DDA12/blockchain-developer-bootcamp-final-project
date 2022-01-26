@@ -1,7 +1,7 @@
 import {ipfsGatewayUrl, chainList} from "../../common/chain.js";
 import '../../lib/jquery.js';
 import store from '../../app/store.js';
-import { getLocalUriImage } from '../ipfs/Ipfs.js';
+import { decentralizedStorage as DS } from '../ipfs/Ipfs.js';
 import { verifyJws, getNewEthDid } from '../../common/did.js';
 import { loadNfts, status as statusNft, createNft, reset as resetNft, nftSetPortfolio} from './nftSlice.js';
 import { status as statusRegistry, ready as readyRegistry, nftAdded} from '../registry/registrySlice.js';
@@ -155,7 +155,8 @@ function renderCards(containerId, listNfts, walletUser) {
             new Promise(async (resolve, reject)=> {
                     addSpinnerHTML(`${COLLECTIONIMAGEID}${jti}`, `${SPINNERID}${jti}`, true)
                     addSpinnerHTML(`${IMAGEJWSID}${jti}`, `${JWSSPINNERID}${jti}`, true, 'text-warning');
-                    return resolve(getLocalUriImage(nftMetaData.image));
+                    const file = await DS.get(nftMetaData.image)
+                    return resolve(URL.createObjectURL(file));
                 }
             ).then((localUri) => {
                 $(`#${COLLECTIONIMAGEID}${jti}`)

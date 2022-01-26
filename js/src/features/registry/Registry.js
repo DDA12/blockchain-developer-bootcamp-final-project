@@ -3,7 +3,7 @@ import { portFolioSelected, loadContractsDeployed, status as statusRegistry, cre
 import { status as statusEtherSettings } from '../ethSettings/ethSettingsSlice.js';
 import { status as statusWallet } from '../wallet/walletSlice.js';
 import store from '../../app/store.js';
-import { getLocalUriImage } from '../ipfs/Ipfs.js';
+import { decentralizedStorage as DS } from '../ipfs/Ipfs.js';
 import {renderAlert, removeAllAlerts} from '../../common/alert.js';
 import {formatEthAddress, formatChainId, updateToolTip, formatDid, updateToolTips, addSpinnerHTML} from  '../../common/helpers.js';
 import '../../lib/ether-did.umd.js'; 
@@ -152,10 +152,10 @@ function renderCards(containerId, listContracts, walletUser) {
                     return card.hide().slideDown(750).css('opacity', 0)
                     .animate({opacity: 1}, {queue: false, duration: 750})
                 });
-                new Promise((resolve, reject)=> {
+                new Promise(async (resolve, reject)=> {
                         card.find(`#${COLLECTIONIMAGEID}`).prepend(cardSpinnerHTML(contract));
-                        const localUri = getLocalUriImage(contract.collectionURI);
-                        return resolve(localUri);
+                        const file = await DS.get(contract.collectionURI);
+                        return resolve(URL.createObjectURL(file));
                     }
                 ).then((localUri) => {
                         card.find(`#${COLLECTIONIMAGEID}`)

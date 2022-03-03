@@ -1,0 +1,16 @@
+{
+    "@context": ["https://www.w3.org/2018/credentials/v1"],
+    "id": "id Of The VC",
+    "type": ["VerifiableCredential", "NFT"],
+    "issuer": "did:ethr:0x3:0xbF663DB7e5cFF11a3F55Ad44d7777a7a893Ffc43",
+    "issuanceDate": 1639249675,
+    "expirationDate": "",
+    "credentialSubject": {
+        "id": "did:ethr:0x3:0xbF663DB7e5cFF11a3F55Ad44d7777a7a893Ffc43",
+        "metaData": {
+            "name": "The Stroll",
+            "description": "The Impressionist work depicts his wife Camille Monet and their son Jean Monet in the period from 1871 to 1877 while they were living in Argenteuil, capturing a moment on a stroll on a windy summer's day",
+            "image": "QmZnJT5dLVAJjcod8Ji9cVKWLDSy3gEUK7EWUbEXhG6RJX"
+        }
+    }
+}

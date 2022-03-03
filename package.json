@@ -1,7 +1,12 @@
 {
-  "dependencies": {
-    "@openzeppelin/contracts": "^4.4.1",
-    "@openzeppelin/test-helpers": "^0.5.15",
-    "@truffle/hdwallet-provider": "^2.0.0"
+  "scripts": {
+    "build:client": "npm --prefix client run build",
+    "start:client": "npm --prefix client run start",
+    "install:client": "cd ./client && npm install && cd..",
+    "install:chain": "cd ./chain && npm install && cd..",
+    "install:all": "npm run install:client && npm run install:chain",
+    "truffle:compile": "cd chain && truffle compile && cd..",
+    "truffle:test": "cd chain && truffle test && cd..",
+    "truffle:migrate": "cd chain && truffle migrate && cd.."
   }
 }

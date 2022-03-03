@@ -1,0 +1,366 @@
+{
+  "contractName": "Portfolio",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.2+commit.661d1103\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IPortfolio.sol\":\"Portfolio\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IPortfolio.sol\":{\"keccak256\":\"0xedd57671e925c5b2a0dea77db20845e173509a684d6ea6297a20f2d5d6c2fa22\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0de2c6f622b25f49fdf31010e71110069998fef713c2841a65794b4dff4892dd\",\"dweb:/ipfs/QmYsRV4UaQHk3Jt91Fp5SFn1MJucRi43BSwQDoUmcu2M3z\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity 0.8.2;\r\n\r\ninterface Portfolio {\r\n    function transferOwnership(address newOwner) external;\r\n    function owner() external returns (address);\r\n}\r\n",
+  "sourcePath": "C:\\Users\\didier.collette\\git\\bootcamp-final-project\\contracts\\IPortfolio.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IPortfolio.sol",
+    "exportedSymbols": {
+      "Portfolio": [
+        3057
+      ]
+    },
+    "id": 3058,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3046,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:22:16"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 3057,
+        "linearizedBaseContracts": [
+          3057
+        ],
+        "name": "Portfolio",
+        "nameLocation": "69:9:16",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "f2fde38b",
+            "id": 3051,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferOwnership",
+            "nameLocation": "95:17:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3049,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3048,
+                  "mutability": "mutable",
+                  "name": "newOwner",
+                  "nameLocation": "121:8:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3051,
+                  "src": "113:16:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3047,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "113:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "112:18:16"
+            },
+            "returnParameters": {
+              "id": 3050,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "139:0:16"
+            },
+            "scope": 3057,
+            "src": "86:54:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "8da5cb5b",
+            "id": 3056,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "owner",
+            "nameLocation": "155:5:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3052,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "160:2:16"
+            },
+            "returnParameters": {
+              "id": 3055,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3054,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3056,
+                  "src": "181:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3053,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "181:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "180:9:16"
+            },
+            "scope": 3057,
+            "src": "146:44:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3058,
+        "src": "59:134:16"
+      }
+    ],
+    "src": "33:162:16"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/IPortfolio.sol",
+    "exportedSymbols": {
+      "Portfolio": [
+        3057
+      ]
+    },
+    "id": 3058,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3046,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:22:16"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 3057,
+        "linearizedBaseContracts": [
+          3057
+        ],
+        "name": "Portfolio",
+        "nameLocation": "69:9:16",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "f2fde38b",
+            "id": 3051,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferOwnership",
+            "nameLocation": "95:17:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3049,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3048,
+                  "mutability": "mutable",
+                  "name": "newOwner",
+                  "nameLocation": "121:8:16",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3051,
+                  "src": "113:16:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3047,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "113:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "112:18:16"
+            },
+            "returnParameters": {
+              "id": 3050,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "139:0:16"
+            },
+            "scope": 3057,
+            "src": "86:54:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "8da5cb5b",
+            "id": 3056,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "owner",
+            "nameLocation": "155:5:16",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3052,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "160:2:16"
+            },
+            "returnParameters": {
+              "id": 3055,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3054,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3056,
+                  "src": "181:7:16",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3053,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "181:7:16",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "180:9:16"
+            },
+            "scope": 3057,
+            "src": "146:44:16",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3058,
+        "src": "59:134:16"
+      }
+    ],
+    "src": "33:162:16"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.2+commit.661d1103.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2022-01-12T11:37:05.338Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

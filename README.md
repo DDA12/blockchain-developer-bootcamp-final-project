@@ -62,14 +62,18 @@
 [https://uvnft.netlify.app/](https://uvnft.netlify.app/)  
 
 ## **Directory Structure**  
-| Folder        | Description               |
-|---            |---                        |
-|build          |Output folder for compiled contracts (JSON files - artifacts of compilation)|
-|contracts      |Contracts source code (*.sol - uncompiled contracts)|
-|docs           |Documentation files including [design_pattern_decisions.md](./docs/design_pattern_decisions.md) and [avoiding_common_attacks.md](./docs/avoiding_common_attacks.md)|
-|js             |Decentralized App Source code - JavaScript frontend|
-|migrations     |Migration scripts used by truffle to deploy the contracts located in contracts folder|
-|test           |Truffle test scripts for the contracts located in contracts folder|
+| Folder              | Description               |
+|---                  |---                        |
+|client               |Decentralized App - frontend|
+|client/src           |Decentralized App Source code - JavaScript frontend|
+|client/assets        |Decentralized App assets|
+|client/dist          |Decentralized App distribution version - JavaScript minified|
+|chain                |Blockchains code - Smart Contracts (EVM)|
+|chain/build          |Output folder for compiled contracts (JSON files - artifacts of compilation)|
+|chain/contracts      |Contracts source code - Solidity|
+|chain/migrations     |Migration scripts used by truffle to deploy the contracts located in contracts folder|
+|chain/test           |Truffle test scripts for the contracts located in contracts folder|
+|docs                 |Documentation files including [design_pattern_decisions.md](./docs/design_pattern_decisions.md) and [avoiding_common_attacks.md](./docs/avoiding_common_attacks.md)|
 
 ## **Running the project**  
 
@@ -81,12 +85,14 @@
     - [This repository:](https://github.com/DDA12/blockchain-developer-bootcamp-final-project.git) In terminal navigate to the directory where you want to install this repository. Then enter: `git clone https://github.com/DDA12/blockchain-developer-bootcamp-final-project.git`
 
 - ### Dependencies installation
-    - **Contracts:**  
-    In a terminal window, at the root of this project enter: `npm install` to install the following dependencies:
+    In a terminal window, at the root of this project enter: `npm run install:all` to install all the dependencies (chain and client) required for the project.
+    - **Contracts (chain):**
+      In a terminal window, at the root of this project enter: `npm run install:chain` to install only the chain (Contracts) dependencies:
         - @openzeppelin/contracts
         - @openzeppelin/test-helpers
         - @truffle/hdwallet-provider
-    - **Frontend:** All dependencies are already included and located in [`./js/src/lib/`](./js/src/lib/).
+    - **Frontend (client):** The main dependencies are:
+      In a terminal window, at the root of this project enter: `npm run install:client` to install only the client (Frontend) dependencies:
         - [ethers](https://github.com/ethers-io/ethers.js/)
         - [ethr-did](https://github.com/uport-project/ethr-did)
         - [ethr-did-resolver](https://github.com/decentralized-identity/ethr-did-resolver)
@@ -101,25 +107,28 @@
         - [Jquery](https://jquery.com/)  
           
 - ### Compiling Contracts  
-    In a terminal window, at the root of this project enter: `truffle compile`
+    In a terminal window, at the root of this project enter: `npm run truffle:compile`
 
 - ### Testing Contracts  
     1. Start Ganache and `run a testnet on port: 7545 and network_id: 1337`
-    2. In a terminal window, at the root of this project enter: `truffle test`
+    2. In a terminal window, at the root of this project enter: `npm run truffle:test`
 
 - ### Running Decentralized App Locally
     1. With Visual Studio Code and Live Server Extension:
         - Start Live server (default http://127.0.0.1:5500)
-        - Open http://127.0.0.1:5500/js/index.html in your browser
+        - Open http://127.0.0.1:5500/client/dist/index.html in your browser
     2. Without Visual Studio Code:  
-    In a terminal window, at the root of this project:
-        - Enter: `npm install -g http-server`  
-        - Then enter: `http-server`
-        - Open http://127.0.0.1:8080/js/index.html in your browser  
+        * In a terminal window, at the root of this project:
+            - Enter: `npm install -g http-server`  
+            - Then enter: `http-server`
+            - Open http://127.0.0.1:8080/client/dist/index.html in your browser    
+        * OR in a terminal window, at the root of this project:
+            - Enter: `npm run build:client`
+            - Once compiled, open http://127.0.0.1:8080/ in your browser  
 
 - ### Running Decentralized App with Local testnet
     1. Start Ganache and `run a testnet on port: 7545 and network_id: 1337`
-    2. In a terminal window, at the root of this project enter: `truffle migrate`
+    2. In a terminal window, at the root of this project enter: `npm run truffle:migrate`
     3. Follow the instructions in the [previous section](#Running-Decentralized-App-Locally)
 
 ## **Deployed addresses of contracts on testnets**  

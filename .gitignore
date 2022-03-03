@@ -1,10 +1,11 @@
 .env
-node_modules/
-_node_modules/
 .secret
+apiKeys*
 package-lock.json
 .vscode
-apiKeys*
-dist/*
-screencast
+dev/
+node_modules/
+screencast/
 checklist.txt
+.gitignore
+circom/

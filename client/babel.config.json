@@ -1,0 +1,14 @@
+{
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+          }
+        }
+      ]
+    ],
+    "plugins": [
+        ["@babel/transform-runtime"]
+    ]
+  }

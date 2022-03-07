@@ -71,7 +71,7 @@ export function getSigningDelegate(ethDid) {
     return null
 }
 
-export async function addSigningDelegate(providers, ethDid, ethDidDelegate, providerSigner, save = true) {
+export async function addSigningDelegate(etherProvider, ethDid, ethDidDelegate, providerSigner, save = true) {
     if (localStorage[ethDid.did] == undefined) {
         localStorage[ethDid.did] = JSON.stringify({})
     }
@@ -81,9 +81,7 @@ export async function addSigningDelegate(providers, ethDid, ethDidDelegate, prov
     }
     if (content1.delegates.includes(ethDidDelegate.did)) return true //Already registered delegate - no need to add it again
     const delegateType = ethrDid.DelegateTypes.sigAuth
-    // const providers = getEtherProviders()
-    const chainId = parseInt(ethrDidResolver.interpretIdentifier(ethDid.did).network)
-    const etherProvider = providers[chainId]
+    // const chainId = parseInt(ethrDidResolver.interpretIdentifier(ethDid.did).network)
     const writeContract = new ethersContract(etherProvider.ethrDidRegistryContractAddress,
                                               etherProvider.ethrDidRegistryContractBuild.abi,
                                               providerSigner

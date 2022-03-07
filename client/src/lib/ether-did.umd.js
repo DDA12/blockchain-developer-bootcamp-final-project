@@ -1,4 +1,5 @@
 import * as ethers from 'ethers'
+import 'did-jwt'
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('did-jwt'), require('@ethersproject/transactions'), require('@ethersproject/signing-key'), require('@ethersproject/wallet'), require('@ethersproject/base64'), require('@ethersproject/bytes'), require('@ethersproject/basex'), require('@ethersproject/strings'), require('ethr-did-resolver')) :

@@ -64,7 +64,7 @@
 ## **Directory Structure**  
 | Folder              | Description               |
 |---                  |---                        |
-|client               |Decentralized App - frontend|
+|client               |Decentralized App - Frontend|
 |client/src           |Decentralized App Source code - JavaScript frontend|
 |client/assets        |Decentralized App assets|
 |client/dist          |Decentralized App distribution version - JavaScript minified|

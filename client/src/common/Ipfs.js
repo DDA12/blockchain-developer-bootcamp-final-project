@@ -68,7 +68,7 @@ class DecentralizedStorage {
     }
 
     async #addIPFS(blob) {
-        if (this.ipfsHttpClient) {
+        if (this.#ipfsHttpClient) {
             const file =  await this.#ipfsLocalNode.add(blob)
             await this.#ipfsHttpClient.add(blob)
             return file.cid.toString()          

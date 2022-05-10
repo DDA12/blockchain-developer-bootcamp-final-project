@@ -55,6 +55,7 @@ export default {
     // external: externals.map( x => x.find),
     output: {
         dir: dest,
+        sourcemap: isDevelopment,
         format: 'es',
         entryFileNames: '[name]-bundle-[hash].js',
         chunkFileNames: 'externals/[name]-[hash].js', // Used by rollup: dynamic imports create chunks

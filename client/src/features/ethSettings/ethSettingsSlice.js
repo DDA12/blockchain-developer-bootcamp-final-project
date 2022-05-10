@@ -47,7 +47,11 @@ export const createProviders = createAsyncThunk("ethSettings/createProviders", a
                                 // const provider = await ethers.getDefaultProvider(parseInt(chainInfo.chainId) || chainInfo.chainId, apiKeys);
                                 let provider = undefined
                                 if (typeof chainInfo.chainId == "string") {
+                                  if (chainInfo.chainId.includes('wss')) {
+                                    provider = new ethersProviders.WebSocketProvider(chainInfo.chainId + (apiKeys[chainInfo.provider] || ''))
+                                  } else {
                                     provider = new ethersProviders.JsonRpcProvider(chainInfo.chainId + (apiKeys[chainInfo.provider] || ''))
+                                  }
                                 } else {
                                   provider = new ethersProviders.InfuraProvider(chainInfo.chainId, apiKeys[chainInfo.provider])
                                 }

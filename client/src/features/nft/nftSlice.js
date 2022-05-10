@@ -67,16 +67,18 @@ export const createNft = createAsyncThunk("nft/createNft", async (param, thunkAP
 })
 
 export const loadNfts = createAsyncThunk("nft/loadNfts", async (param, thunkAPI) => {
-  const DS = await DecentralizedStorage.getDS()
+    const DS = await DecentralizedStorage.getDS()
     const chainKey = parseInt(param.chainId)
     const contract = nftReadContracts[chainKey][param.address]
     let allTokenIds = await contract.getAllTokenIds()
-    return await Promise.all(allTokenIds.map(async (tokenIdBN) => {
+    return Promise.all(allTokenIds.map(async (tokenIdBN) => {
             const tokenId = tokenIdBN.toNumber()
-            return contract.getCoaURI(tokenId).then(async (uri) => {
+            // console.log("Start: " + tokenId)
+            return await contract.getCoaURI(tokenId).then(async (uri) => {
                 const file = await DS.get(uri)
                 const jws = await file.text()
                 const owner = await contract.ownerOf(tokenId).catch((e) => {console.log(e); return {}})
+                // console.log("Finish: " +tokenId)
                 thunkAPI.dispatch(nftLoaded({tokenId, nft: { address: param.address, tokenId, owner, jws, jwsDecoded: didJwt.decodeJWT(jws, {})}}))
                 return jws
             })

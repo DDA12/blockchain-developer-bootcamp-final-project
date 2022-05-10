@@ -90,16 +90,34 @@ class DecentralizedStorage {
 
     async get(cid) {
         if (!isIPFS.cid(cid)) {
+            // console.log("WRONG CID")
             return EMPTYFILE
         }    
+        let res
         if (this.#web3StorageClient != undefined) {
-            const res = await this.#web3StorageClient.get(cid)
-            const files = await res.files()
-            if (files.length == 0) return EMPTYFILE
-            return files[0]
+            try {
+                res = await this.#web3StorageClient.get(cid)
+                // console.log(`Got a response! [${res.status}] ${res.statusText}`)
+                // console.log(res)
+                const files = await res.files()
+                // for (const file of files) {
+                //     console.log(`${file.cid} -- ${file.name} -- ${file.size}`)
+                //   }
+                if (files.length == 0) return EMPTYFILE
+                return files[0]
+    
+            } catch(e) {
+                // const files = await res.files()
+                // if (files.length == 0) return EMPTYFILE
+                // return files[0]
+                // console.log(e)
+                // console.log(`Got a response! [${res.status}] ${res.statusText}`)
+                console.log("Web3.storage did not find the file. Trying IPFS local node")
+            }
         }
         let ipfs = this.#ipfsLocalNode || this.#ipfsHttpClient ||  null
         if (ipfs) {
+            console.log("Getting thru IPFS local node")
             const stream = ipfs.cat(cid)
             let data = new Uint8Array()
             for await (const chunk of stream) {

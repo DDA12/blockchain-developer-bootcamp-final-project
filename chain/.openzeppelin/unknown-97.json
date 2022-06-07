@@ -1,0 +1,138 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x3EeC17fa693539F36115eA71DfAa256bfC29bE8B",
+      "txHash": "0x0159b9db5ab64e8637c6c18888275f73e00fa91be1d1106e8b23566194f2a7d9",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "8231fd41453709b85e2e6f5f0f019f64f437a3deb914ec23241ba324652b6eab": {
+      "address": "0xF5F3976ED98dfb3BE8EE4d56D8cfc72E8BD58C09",
+      "txHash": "0x3d72f9b52a37dd4c1ed5055a60179c37984577aa62afff24175cca513009277d",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_uint8",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:67"
+          },
+          {
+            "contract": "ERC1967UpgradeUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\ERC1967\\ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "contract": "UUPSUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\UUPSUpgradeable.sol:107"
+          },
+          {
+            "contract": "ContextUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:87"
+          },
+          {
+            "contract": "PausableUpgradeable",
+            "label": "_paused",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\security\\PausableUpgradeable.sol:29"
+          },
+          {
+            "contract": "PausableUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\security\\PausableUpgradeable.sol:102"
+          },
+          {
+            "contract": "RegistryStorage",
+            "label": "_portfoliosRegistered",
+            "type": "t_array(t_address)dyn_storage",
+            "src": "..\\project:\\contracts\\RegistryStorage.sol:19"
+          },
+          {
+            "contract": "RegistryStorage",
+            "label": "_portfoliosRegisteredIndex",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\RegistryStorage.sol:20"
+          },
+          {
+            "contract": "RegistryStorage",
+            "label": "_portfoliosSupported",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(Portfolio)5505_storage)",
+            "src": "..\\project:\\contracts\\RegistryStorage.sol:29"
+          }
+        ],
+        "types": {
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(Portfolio)5505_storage)": {
+            "label": "mapping(string => struct RegistryStorage.Portfolio)"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_struct(Portfolio)5505_storage": {
+            "label": "struct RegistryStorage.Portfolio",
+            "members": [
+              {
+                "label": "beacon",
+                "type": "t_address"
+              },
+              {
+                "label": "implementation",
+                "type": "t_address"
+              }
+            ]
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          }
+        }
+      }
+    }
+  }
+}

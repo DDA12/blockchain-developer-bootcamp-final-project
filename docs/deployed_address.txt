@@ -6,7 +6,8 @@
     "networkId": 3,
     "type": "PoW",
     "chainExplorer": "https://ropsten.etherscan.io/",
-    "portfolioRegistryContractAddress": "0xd6bEC76ef61637E6c72620F40FF487078F5345dB",
+    "provider": "infura",
+    "portfolioRegistryContractAddress": "0xA56feef6FC3D42bf7d24E9f3B3bC2dbC13e32B9A",
     "ethrDidRegistryContractAddress": "0xdCa7EF03e98e0DC2B855bE647C39ABe984fcF21B"
   },
   "4": {
@@ -16,7 +17,8 @@
     "networkId": 4,
     "type": "PoA",
     "chainExplorer": "https://ropsten.etherscan.io/",
-    "portfolioRegistryContractAddress": "0x8Ffb8aE53b540a62E142277Ad00cF6681bdC3175",
+    "provider": "infura",
+    "portfolioRegistryContractAddress": "0xb82d006A73684d84cE949A8DFf7EEf58b028Fb3D",
     "ethrDidRegistryContractAddress": "0xdCa7EF03e98e0DC2B855bE647C39ABe984fcF21B"
   },
   "5": {
@@ -26,7 +28,8 @@
     "networkId": 5,
     "type": "PoA",
     "chainExplorer": "https://goerli.etherscan.io/",
-    "portfolioRegistryContractAddress": "0x7b369DdA17Faa1a9B04ED3429B17C37bdfc36CDb",
+    "provider": "infura",
+    "portfolioRegistryContractAddress": "0x55b3804Fe4a36632939056675fFAC82f76964BAD",
     "ethrDidRegistryContractAddress": "0xdCa7EF03e98e0DC2B855bE647C39ABe984fcF21B"
   },
   "42": {
@@ -36,7 +39,8 @@
     "networkId": 42,
     "type": "PoA",
     "chainExplorer": "https://kovan.etherscan.io/",
-    "portfolioRegistryContractAddress": "0x2BC9fBfCA7575da311dfED34e014cA63fe8F792E",
+    "provider": "infura",
+    "portfolioRegistryContractAddress": "0x7b369DdA17Faa1a9B04ED3429B17C37bdfc36CDb",
     "ethrDidRegistryContractAddress": "0xdCa7EF03e98e0DC2B855bE647C39ABe984fcF21B"
   },
   "97": {
@@ -46,17 +50,19 @@
     "networkId": 97,
     "type": "PoA",
     "chainExplorer": "https://testnet.bscscan.com/",
-    "portfolioRegistryContractAddress": "0x8Ffb8aE53b540a62E142277Ad00cF6681bdC3175",
+    "provider": "binance",
+    "portfolioRegistryContractAddress": "0x3EeC17fa693539F36115eA71DfAa256bfC29bE8B",
     "ethrDidRegistryContractAddress": "0xC727fc84F04D331E0687b50c1b7D5A62c4839fDa"
   },
   "80001": {
     "name": "Ethereum Testnet Polygon Matic Mumbai",
-    "chainId": "https://rpc-mumbai.maticvigil.com",
+    "chainId": "wss://ws-matic-mumbai.chainstacklabs.com/",
     "shortName": "Matic Mumbai",
     "networkId": 80001,
     "type": "PoA",
     "chainExplorer": "https://mumbai.polygonscan.com/",
-    "portfolioRegistryContractAddress": "0xDdCd2eEF0d3290547c3Db9adD99E4b54Fe78654b",
+    "provider": "polygon",
+    "portfolioRegistryContractAddress": "0x087c113fF2967D40b7065f9Ae0fbfe390FcD0b45",
     "ethrDidRegistryContractAddress": "0x3C25D4000C3AaAb2B9724697B1de757DECa3C22D"
   }
 }

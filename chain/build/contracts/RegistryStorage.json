@@ -1,0 +1,1307 @@
+{
+  "contractName": "RegistryStorage",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "previousAdmin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "AdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "beacon",
+          "type": "address"
+        }
+      ],
+      "name": "BeaconUpgraded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "version",
+          "type": "uint8"
+        }
+      ],
+      "name": "Initialized",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "Upgraded",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "changeAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAdmin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getImplementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "proxiableUUID",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        }
+      ],
+      "name": "upgradeTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "upgradeToAndCall",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.2+commit.661d1103\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"previousAdmin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"AdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beacon\",\"type\":\"address\"}],\"name\":\"BeaconUpgraded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"Upgraded\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"changeAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAdmin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getImplementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"proxiableUUID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"upgradeToAndCall\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"D Collette\",\"details\":\"Always add new state variables at the end. Don't remove or change the type of an existing states variables.See details here: https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable#modifying-your-contracts\",\"kind\":\"dev\",\"methods\":{\"changeAdmin(address)\":{\"details\":\"Change Admin's address: authorized account to upgrade contract implementation.Requirements: onlyAdmin.\",\"params\":{\"newAdmin\":\"address of new Admin.\"}},\"getAdmin()\":{\"details\":\"Returns Admin's address: authorized account to upgrade contract implementation.\",\"returns\":{\"_0\":\"address - Admin's address.\"}},\"getImplementation()\":{\"details\":\"Returns address of contract implementation: Implementation slot value (used by proxy to delegate calls).\",\"returns\":{\"_0\":\"address - implementation address.\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"paused()\":{\"details\":\"Returns true if the contract is paused, and false otherwise.\"},\"proxiableUUID()\":{\"details\":\"Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"upgradeTo(address)\":{\"details\":\"Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.\"},\"upgradeToAndCall(address,bytes)\":{\"details\":\"Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.\"},\"version()\":{\"details\":\"Returns Version of Registry contract (implementation version).\",\"returns\":{\"_0\":\"uint - version.\"}}},\"stateVariables\":{\"_portfoliosRegistered\":{\"details\":\"Portfolios (contracts) registered (from creation or addition)\"},\"_portfoliosSupported\":{\"details\":\"Supported Portfolios\"},\"_version\":{\"details\":\"Version of the Registry contract (for upgrades management) - stored in bytecode\"}},\"title\":\"Abstract Storage of Registry Contract (UUPS Upgradeable)\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"changeAdmin(address)\":{\"notice\":\"Change Admin role's account: change authorized account to upgrade contract implementation\"},\"getAdmin()\":{\"notice\":\"Get Admin role's account: authorized account to upgrade contract implementation\"},\"version()\":{\"notice\":\"Returns Version of Registry contract (implementation version).\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/RegistryStorage.sol\":\"RegistryStorage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol\":{\"keccak256\":\"0x652fee292f698d8dba81bf287cb71f1682f6483b67ebe601a5f7387dcfc30b34\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://98c7bba29bcab7240cdaada7dd7cbe3529fec83314801270c46239e72a9e84d7\",\"dweb:/ipfs/QmfHCc1KMygjXchXVwafWTkFjhbb2SQ3Cu5GzRTdV4CCCh\"]},\"@openzeppelin/contracts-upgradeable/interfaces/draft-IERC1822Upgradeable.sol\":{\"keccak256\":\"0x77c89f893e403efc6929ba842b7ccf6534d4ffe03afe31670b4a528c0ad78c0f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://496bd9b3df2455d571018c09f0c6badd29713fdeb907c6aa09d8d28cb603f053\",\"dweb:/ipfs/QmXdJDyYs6WMwMh21dez2BYPxhSUaUYFMDtVNcn2cgFR79\"]},\"@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol\":{\"keccak256\":\"0x315887e846f1e5f8d8fa535a229d318bb9290aaa69485117f1ee8a9a6b3be823\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://29dda00da6d269685b555e710e4abf1c3eb6d00c15b888a7880a2f8dd3c4fdc2\",\"dweb:/ipfs/QmSqcjtdECygtT1Gy7uEo42x8542srpgGEeKKHfcnQqXgn\"]},\"@openzeppelin/contracts-upgradeable/proxy/beacon/IBeaconUpgradeable.sol\":{\"keccak256\":\"0x24b86ac8c005b8c654fbf6ac34a5a4f61580d7273541e83e013e89d66fbf0908\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4dbfe1a3b3b3fb64294ce41fd2ad362e7b7012208117864f42c1a67620a6d5c1\",\"dweb:/ipfs/QmVMU5tWt7zBQMmf5cpMX8UMHV86T3kFeTxBTBjFqVWfoJ\"]},\"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x7454006cccb737612b00104d2f606d728e2818b778e7e55542f063c614ce46ba\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6ec10894beb0f7537fba35e501fd1c5d35440e8c8f5ced1b8e57722a1d0879a8\",\"dweb:/ipfs/Qmbc3bNmtDewTGSmrPD93Ubp8saAz8xCxsgTjSmpNTqukz\"]},\"@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol\":{\"keccak256\":\"0x6e36e9b4b71de699c2f3f0d4e4d1aa0b35da99a26e8d5b91ef09ba234b4ef270\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://abfa467c53a0d60b4d09bf04aa952b1d1d44e5766fcc053aace078d7859b8419\",\"dweb:/ipfs/QmebVTZpyNxYfKYTuLMywzEJTdc1Ca8ME4xm3kR9gQgToG\"]},\"@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol\":{\"keccak256\":\"0x041af89e5e60b74e1203d5a34614c9de379726f52ecb8cf064cab78b9fdcdf9d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a8e235e33979e564ee560e5e7c42f3d4c309698eae7b7035aaf65b0ce6253f9\",\"dweb:/ipfs/QmQKdNPLcgR6LLtS9vDRXy8jeD7gCZDTfctXiTwu6HN7M1\"]},\"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"keccak256\":\"0x55cf2bd9fc76704ddcdc19834cd288b7de00fc0f298a40ea16a954ae8991db2d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://37e4df53c8d2e3c1062c1c7b2c17366db7de03bfd2559d340ca95c588aa49c2f\",\"dweb:/ipfs/QmQ9vsG3o4wED3FRogiSUhdzJvZSjjYFtydzXvFEJtgZk4\"]},\"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol\":{\"keccak256\":\"0x963ea7f0b48b032eef72fe3a7582edf78408d6f834115b9feadd673a4d5bd149\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d6520943ea55fdf5f0bafb39ed909f64de17051bc954ff3e88c9e5621412c79c\",\"dweb:/ipfs/QmWZ4rAKTQbNG2HxGs46AcTXShsVytKeLs7CUCdCSv5N7a\"]},\"@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol\":{\"keccak256\":\"0x798741e231b22b81e2dd2eddaaf8832dee4baf5cd8e2dbaa5c1dd12a1c053c4d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c41e8a7a906b8f362c8b760a44edadc61782008ea2ecf377ac5b5325bf6c3912\",\"dweb:/ipfs/QmcXr19zuH3YLzD6RZNE6UTzvsKSckdxZQnagPoDGkCHu2\"]},\"@openzeppelin/contracts-upgradeable/utils/Create2Upgradeable.sol\":{\"keccak256\":\"0xbdec72f55ce6d1f234cde556b3e38fc0f739f46e9288cc4ae32b9334365889db\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2d5530e5685d2fe35f1c4c30c0c9307dff79d0b699ca4cca5e53a68c9800ab07\",\"dweb:/ipfs/QmPvyBNty8jiGHJyNJmeCEkvgwwySiuEyk7QrBipH52tzs\"]},\"@openzeppelin/contracts-upgradeable/utils/StorageSlotUpgradeable.sol\":{\"keccak256\":\"0x422c3d27d0d5681cea93acbb0dcb175fa5b461b5b7731da7ff77e51f0f0174c7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://feb47206935cf956f60ffd76b8bad047102c7acbf2aab10157a235b7af66fa39\",\"dweb:/ipfs/QmZQ39kpPhCdN9fyZ7BMwnK26tHjiP6QZDeL8tMSPDjxan\"]},\"project:/contracts/RegistryStorage.sol\":{\"keccak256\":\"0xcecffa9e1f128974f68466aedf5b86575df8836663f75533de3f4602dc3098f4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2d37002cbd1904499edffd8957968b1798397d8b91f39f51a2a1b558f8134862\",\"dweb:/ipfs/QmYLeJEudSCCMEs4uFLUqaprWHk9DmTMA2S892QW23QJsR\"]},\"project:/contracts/RegistryUpgradeable.sol\":{\"keccak256\":\"0xbed5e88a4ce94bf9fe4da0449e939748b37e59a1ba73a56e21185977baf02b25\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b86c7668eddd9f5aff7e98626839329cd8c951c3db9d0915acb9c7d7beee8e8a\",\"dweb:/ipfs/QmT1DxXm658doY2mggt5365KsU4X9mF3y5jbMpiVdVfv6E\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity 0.8.2;\r\n\r\nimport \"./RegistryUpgradeable.sol\";\r\n\r\n/// @title Abstract Storage of Registry Contract (UUPS Upgradeable)\r\n/// @author D Collette\r\n/// @dev Always add new state variables at the end. Don't remove or change the type of an existing states variables.\r\n/// @dev See details here: https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable#modifying-your-contracts\r\n\r\nabstract contract RegistryStorage is RegistryUpgradeable {\r\n    /// @dev Version of the Registry contract (for upgrades management) - stored in bytecode\r\n    uint private constant _version = 1; \r\n\r\n    /// @dev Counter used as Salt for create2\r\n    // CountersUpgradeable.Counter internal _nbDeployed;\r\n  \r\n    /// @dev Portfolios (contracts) registered (from creation or addition)\r\n    address[] internal _portfoliosRegistered; \r\n    mapping(address => uint256) internal _portfoliosRegisteredIndex;\r\n\r\n    /// @dev Supported Portfolio details\r\n    struct Portfolio {\r\n        address beacon;\r\n        address implementation;\r\n    }\r\n\r\n    /// @dev Supported Portfolios\r\n    mapping(string => Portfolio) internal _portfoliosSupported; \r\n\r\n    /// @notice Returns Version of Registry contract (implementation version).\r\n    /// @dev Returns Version of Registry contract (implementation version).\r\n    /// @return uint - version.\r\n    function version() public pure returns (uint) {\r\n        return _version;\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\didier.collette\\git\\blockchain-developer-bootcamp-final-project\\chain\\contracts\\RegistryStorage.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/RegistryStorage.sol",
+    "exportedSymbols": {
+      "AddressUpgradeable": [
+        2227
+      ],
+      "ContextUpgradeable": [
+        2269
+      ],
+      "CountersUpgradeable": [
+        2343
+      ],
+      "Create2Upgradeable": [
+        2454
+      ],
+      "ERC1967UpgradeUpgradeable": [
+        502
+      ],
+      "IBeaconUpgradeable": [
+        512
+      ],
+      "IERC1822ProxiableUpgradeable": [
+        133
+      ],
+      "Initializable": [
+        654
+      ],
+      "OwnableUpgradeable": [
+        123
+      ],
+      "PausableUpgradeable": [
+        901
+      ],
+      "RegistryStorage": [
+        5521
+      ],
+      "RegistryUpgradeable": [
+        5621
+      ],
+      "StorageSlotUpgradeable": [
+        2514
+      ],
+      "UUPSUpgradeable": [
+        790
+      ]
+    },
+    "id": 5522,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5484,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:22:35"
+      },
+      {
+        "absolutePath": "project:/contracts/RegistryUpgradeable.sol",
+        "file": "./RegistryUpgradeable.sol",
+        "id": 5485,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5522,
+        "sourceUnit": 5622,
+        "src": "59:35:35",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 5487,
+              "name": "RegistryUpgradeable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 5621,
+              "src": "472:19:35"
+            },
+            "id": 5488,
+            "nodeType": "InheritanceSpecifier",
+            "src": "472:19:35"
+          }
+        ],
+        "contractDependencies": [
+          123,
+          133,
+          502,
+          654,
+          790,
+          901,
+          2269,
+          5621
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 5486,
+          "nodeType": "StructuredDocumentation",
+          "src": "98:335:35",
+          "text": "@title Abstract Storage of Registry Contract (UUPS Upgradeable)\n @author D Collette\n @dev Always add new state variables at the end. Don't remove or change the type of an existing states variables.\n @dev See details here: https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable#modifying-your-contracts"
+        },
+        "fullyImplemented": true,
+        "id": 5521,
+        "linearizedBaseContracts": [
+          5521,
+          5621,
+          901,
+          123,
+          2269,
+          790,
+          502,
+          133,
+          654
+        ],
+        "name": "RegistryStorage",
+        "nameLocation": "453:15:35",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "documentation": {
+              "id": 5489,
+              "nodeType": "StructuredDocumentation",
+              "src": "499:88:35",
+              "text": "@dev Version of the Registry contract (for upgrades management) - stored in bytecode"
+            },
+            "id": 5492,
+            "mutability": "constant",
+            "name": "_version",
+            "nameLocation": "615:8:35",
+            "nodeType": "VariableDeclaration",
+            "scope": 5521,
+            "src": "593:34:35",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5490,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "593:4:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "31",
+              "id": 5491,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "626:1:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1_by_1",
+                "typeString": "int_const 1"
+              },
+              "value": "1"
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "documentation": {
+              "id": 5493,
+              "nodeType": "StructuredDocumentation",
+              "src": "746:70:35",
+              "text": "@dev Portfolios (contracts) registered (from creation or addition)"
+            },
+            "id": 5496,
+            "mutability": "mutable",
+            "name": "_portfoliosRegistered",
+            "nameLocation": "841:21:35",
+            "nodeType": "VariableDeclaration",
+            "scope": 5521,
+            "src": "822:40:35",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 5494,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "822:7:35",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 5495,
+              "nodeType": "ArrayTypeName",
+              "src": "822:9:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 5500,
+            "mutability": "mutable",
+            "name": "_portfoliosRegisteredIndex",
+            "nameLocation": "907:26:35",
+            "nodeType": "VariableDeclaration",
+            "scope": 5521,
+            "src": "870:63:35",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 5499,
+              "keyType": {
+                "id": 5497,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "878:7:35",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "870:27:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 5498,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "889:7:35",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "RegistryStorage.Portfolio",
+            "id": 5505,
+            "members": [
+              {
+                "constant": false,
+                "id": 5502,
+                "mutability": "mutable",
+                "name": "beacon",
+                "nameLocation": "1020:6:35",
+                "nodeType": "VariableDeclaration",
+                "scope": 5505,
+                "src": "1012:14:35",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 5501,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1012:7:35",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5504,
+                "mutability": "mutable",
+                "name": "implementation",
+                "nameLocation": "1045:14:35",
+                "nodeType": "VariableDeclaration",
+                "scope": 5505,
+                "src": "1037:22:35",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 5503,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1037:7:35",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Portfolio",
+            "nameLocation": "991:9:35",
+            "nodeType": "StructDefinition",
+            "scope": 5521,
+            "src": "984:83:35",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "documentation": {
+              "id": 5506,
+              "nodeType": "StructuredDocumentation",
+              "src": "1075:29:35",
+              "text": "@dev Supported Portfolios"
+            },
+            "id": 5511,
+            "mutability": "mutable",
+            "name": "_portfoliosSupported",
+            "nameLocation": "1148:20:35",
+            "nodeType": "VariableDeclaration",
+            "scope": 5521,
+            "src": "1110:58:35",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Portfolio_$5505_storage_$",
+              "typeString": "mapping(string => struct RegistryStorage.Portfolio)"
+            },
+            "typeName": {
+              "id": 5510,
+              "keyType": {
+                "id": 5507,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "1118:6:35",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1110:28:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Portfolio_$5505_storage_$",
+                "typeString": "mapping(string => struct RegistryStorage.Portfolio)"
+              },
+              "valueType": {
+                "id": 5509,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 5508,
+                  "name": "Portfolio",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 5505,
+                  "src": "1128:9:35"
+                },
+                "referencedDeclaration": 5505,
+                "src": "1128:9:35",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Portfolio_$5505_storage_ptr",
+                  "typeString": "struct RegistryStorage.Portfolio"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5519,
+              "nodeType": "Block",
+              "src": "1414:34:35",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 5517,
+                    "name": "_version",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 5492,
+                    "src": "1432:8:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 5516,
+                  "id": 5518,
+                  "nodeType": "Return",
+                  "src": "1425:15:35"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5512,
+              "nodeType": "StructuredDocumentation",
+              "src": "1178:184:35",
+              "text": "@notice Returns Version of Registry contract (implementation version).\n @dev Returns Version of Registry contract (implementation version).\n @return uint - version."
+            },
+            "functionSelector": "54fd4d50",
+            "id": 5520,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "version",
+            "nameLocation": "1377:7:35",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5513,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1384:2:35"
+            },
+            "returnParameters": {
+              "id": 5516,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5515,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5520,
+                  "src": "1408:4:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5514,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1408:4:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1407:6:35"
+            },
+            "scope": 5521,
+            "src": "1368:80:35",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5522,
+        "src": "435:1016:35"
+      }
+    ],
+    "src": "33:1420:35"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/RegistryStorage.sol",
+    "exportedSymbols": {
+      "AddressUpgradeable": [
+        2227
+      ],
+      "ContextUpgradeable": [
+        2269
+      ],
+      "CountersUpgradeable": [
+        2343
+      ],
+      "Create2Upgradeable": [
+        2454
+      ],
+      "ERC1967UpgradeUpgradeable": [
+        502
+      ],
+      "IBeaconUpgradeable": [
+        512
+      ],
+      "IERC1822ProxiableUpgradeable": [
+        133
+      ],
+      "Initializable": [
+        654
+      ],
+      "OwnableUpgradeable": [
+        123
+      ],
+      "PausableUpgradeable": [
+        901
+      ],
+      "RegistryStorage": [
+        5521
+      ],
+      "RegistryUpgradeable": [
+        5621
+      ],
+      "StorageSlotUpgradeable": [
+        2514
+      ],
+      "UUPSUpgradeable": [
+        790
+      ]
+    },
+    "id": 5522,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5484,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:22:35"
+      },
+      {
+        "absolutePath": "project:/contracts/RegistryUpgradeable.sol",
+        "file": "./RegistryUpgradeable.sol",
+        "id": 5485,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5522,
+        "sourceUnit": 5622,
+        "src": "59:35:35",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 5487,
+              "name": "RegistryUpgradeable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 5621,
+              "src": "472:19:35"
+            },
+            "id": 5488,
+            "nodeType": "InheritanceSpecifier",
+            "src": "472:19:35"
+          }
+        ],
+        "contractDependencies": [
+          123,
+          133,
+          502,
+          654,
+          790,
+          901,
+          2269,
+          5621
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 5486,
+          "nodeType": "StructuredDocumentation",
+          "src": "98:335:35",
+          "text": "@title Abstract Storage of Registry Contract (UUPS Upgradeable)\n @author D Collette\n @dev Always add new state variables at the end. Don't remove or change the type of an existing states variables.\n @dev See details here: https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable#modifying-your-contracts"
+        },
+        "fullyImplemented": true,
+        "id": 5521,
+        "linearizedBaseContracts": [
+          5521,
+          5621,
+          901,
+          123,
+          2269,
+          790,
+          502,
+          133,
+          654
+        ],
+        "name": "RegistryStorage",
+        "nameLocation": "453:15:35",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "documentation": {
+              "id": 5489,
+              "nodeType": "StructuredDocumentation",
+              "src": "499:88:35",
+              "text": "@dev Version of the Registry contract (for upgrades management) - stored in bytecode"
+            },
+            "id": 5492,
+            "mutability": "constant",
+            "name": "_version",
+            "nameLocation": "615:8:35",
+            "nodeType": "VariableDeclaration",
+            "scope": 5521,
+            "src": "593:34:35",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 5490,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "593:4:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "hexValue": "31",
+              "id": 5491,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "626:1:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1_by_1",
+                "typeString": "int_const 1"
+              },
+              "value": "1"
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "documentation": {
+              "id": 5493,
+              "nodeType": "StructuredDocumentation",
+              "src": "746:70:35",
+              "text": "@dev Portfolios (contracts) registered (from creation or addition)"
+            },
+            "id": 5496,
+            "mutability": "mutable",
+            "name": "_portfoliosRegistered",
+            "nameLocation": "841:21:35",
+            "nodeType": "VariableDeclaration",
+            "scope": 5521,
+            "src": "822:40:35",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 5494,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "822:7:35",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 5495,
+              "nodeType": "ArrayTypeName",
+              "src": "822:9:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 5500,
+            "mutability": "mutable",
+            "name": "_portfoliosRegisteredIndex",
+            "nameLocation": "907:26:35",
+            "nodeType": "VariableDeclaration",
+            "scope": 5521,
+            "src": "870:63:35",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 5499,
+              "keyType": {
+                "id": 5497,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "878:7:35",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "870:27:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 5498,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "889:7:35",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "RegistryStorage.Portfolio",
+            "id": 5505,
+            "members": [
+              {
+                "constant": false,
+                "id": 5502,
+                "mutability": "mutable",
+                "name": "beacon",
+                "nameLocation": "1020:6:35",
+                "nodeType": "VariableDeclaration",
+                "scope": 5505,
+                "src": "1012:14:35",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 5501,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1012:7:35",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5504,
+                "mutability": "mutable",
+                "name": "implementation",
+                "nameLocation": "1045:14:35",
+                "nodeType": "VariableDeclaration",
+                "scope": 5505,
+                "src": "1037:22:35",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 5503,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1037:7:35",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Portfolio",
+            "nameLocation": "991:9:35",
+            "nodeType": "StructDefinition",
+            "scope": 5521,
+            "src": "984:83:35",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "documentation": {
+              "id": 5506,
+              "nodeType": "StructuredDocumentation",
+              "src": "1075:29:35",
+              "text": "@dev Supported Portfolios"
+            },
+            "id": 5511,
+            "mutability": "mutable",
+            "name": "_portfoliosSupported",
+            "nameLocation": "1148:20:35",
+            "nodeType": "VariableDeclaration",
+            "scope": 5521,
+            "src": "1110:58:35",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Portfolio_$5505_storage_$",
+              "typeString": "mapping(string => struct RegistryStorage.Portfolio)"
+            },
+            "typeName": {
+              "id": 5510,
+              "keyType": {
+                "id": 5507,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "1118:6:35",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1110:28:35",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Portfolio_$5505_storage_$",
+                "typeString": "mapping(string => struct RegistryStorage.Portfolio)"
+              },
+              "valueType": {
+                "id": 5509,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 5508,
+                  "name": "Portfolio",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 5505,
+                  "src": "1128:9:35"
+                },
+                "referencedDeclaration": 5505,
+                "src": "1128:9:35",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Portfolio_$5505_storage_ptr",
+                  "typeString": "struct RegistryStorage.Portfolio"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5519,
+              "nodeType": "Block",
+              "src": "1414:34:35",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 5517,
+                    "name": "_version",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 5492,
+                    "src": "1432:8:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 5516,
+                  "id": 5518,
+                  "nodeType": "Return",
+                  "src": "1425:15:35"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5512,
+              "nodeType": "StructuredDocumentation",
+              "src": "1178:184:35",
+              "text": "@notice Returns Version of Registry contract (implementation version).\n @dev Returns Version of Registry contract (implementation version).\n @return uint - version."
+            },
+            "functionSelector": "54fd4d50",
+            "id": 5520,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "version",
+            "nameLocation": "1377:7:35",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5513,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1384:2:35"
+            },
+            "returnParameters": {
+              "id": 5516,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5515,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5520,
+                  "src": "1408:4:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5514,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1408:4:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1407:6:35"
+            },
+            "scope": 5521,
+            "src": "1368:80:35",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5522,
+        "src": "435:1016:35"
+      }
+    ],
+    "src": "33:1420:35"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.2+commit.661d1103.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2022-06-07T19:28:07.717Z",
+  "devdoc": {
+    "author": "D Collette",
+    "details": "Always add new state variables at the end. Don't remove or change the type of an existing states variables.See details here: https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable#modifying-your-contracts",
+    "kind": "dev",
+    "methods": {
+      "changeAdmin(address)": {
+        "details": "Change Admin's address: authorized account to upgrade contract implementation.Requirements: onlyAdmin.",
+        "params": {
+          "newAdmin": "address of new Admin."
+        }
+      },
+      "getAdmin()": {
+        "details": "Returns Admin's address: authorized account to upgrade contract implementation.",
+        "returns": {
+          "_0": "address - Admin's address."
+        }
+      },
+      "getImplementation()": {
+        "details": "Returns address of contract implementation: Implementation slot value (used by proxy to delegate calls).",
+        "returns": {
+          "_0": "address - implementation address."
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "paused()": {
+        "details": "Returns true if the contract is paused, and false otherwise."
+      },
+      "proxiableUUID()": {
+        "details": "Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      },
+      "upgradeTo(address)": {
+        "details": "Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event."
+      },
+      "upgradeToAndCall(address,bytes)": {
+        "details": "Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event."
+      },
+      "version()": {
+        "details": "Returns Version of Registry contract (implementation version).",
+        "returns": {
+          "_0": "uint - version."
+        }
+      }
+    },
+    "stateVariables": {
+      "_portfoliosRegistered": {
+        "details": "Portfolios (contracts) registered (from creation or addition)"
+      },
+      "_portfoliosSupported": {
+        "details": "Supported Portfolios"
+      },
+      "_version": {
+        "details": "Version of the Registry contract (for upgrades management) - stored in bytecode"
+      }
+    },
+    "title": "Abstract Storage of Registry Contract (UUPS Upgradeable)",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "changeAdmin(address)": {
+        "notice": "Change Admin role's account: change authorized account to upgrade contract implementation"
+      },
+      "getAdmin()": {
+        "notice": "Get Admin role's account: authorized account to upgrade contract implementation"
+      },
+      "version()": {
+        "notice": "Returns Version of Registry contract (implementation version)."
+      }
+    },
+    "version": 1
+  }
+}

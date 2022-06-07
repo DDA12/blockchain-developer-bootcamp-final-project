@@ -41,7 +41,7 @@ export const createPortfolio = createAsyncThunk("registry/createPortfolio", asyn
     const owner = await signer.getAddress()
     const writeContract = new ethersContract(etherProvider.portfolioRegistryContractAddress, etherProvider.portfolioRegistryContractBuild.abi, signer)
     thunkAPI.dispatch(createTransactionSubmitted())
-    const transactionResponse = await writeContract.createPortfolio(etherProvider.nftContractBuild.bytecode, owner, param.name, param.symbol, ''+cid)
+    const transactionResponse = await writeContract.createPortfolio(etherProvider.nftContractBuild.contractName, owner, param.name, param.symbol, ''+cid)
                                                 .catch((e) => {return e})
                                                 if (transactionResponse.code != undefined){
       return thunkAPI.rejectWithValue(transactionResponse)
@@ -55,7 +55,7 @@ export const createPortfolio = createAsyncThunk("registry/createPortfolio", asyn
       transactionReceipt = transactionReceipt.receipt
     }
     const iface = new ethersUtils.Interface(etherProvider.portfolioRegistryContractBuild.abi )
-    const logDecoded = iface.decodeEventLog('portfolioDeployed',transactionReceipt.logs[3].data, transactionReceipt.logs[3].topics)
+    const logDecoded = iface.decodeEventLog('portfolioDeployed', transactionReceipt.logs[5].data, transactionReceipt.logs[5].topics)
     const portfolioAddress = logDecoded.portfolioAddress
     const portfolioInfo = {owner, name: param.name, symbol: param.symbol,
                              collectionURI: ''+cid, totalSupply: '0', address: portfolioAddress, chainId: chainKey}

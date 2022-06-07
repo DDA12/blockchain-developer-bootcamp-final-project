@@ -21,7 +21,7 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const fs = require('fs');
 let mnemonic = null;
-try {mnemonic = fs.readFileSync(".secret").toString().trim();} catch(e) {}
+try {mnemonic = fs.readFileSync("../.secret").toString().trim();} catch(e) {}
 const fromAccount = '0xbF663DB7e5cFF11a3F55Ad44d7777a7a893Ffc43'; // Ethereum Account number to deploy/migrate contracts
 let apiKeys = {};
 try {apiKeys = require("../client/assets/apiKeys.json")} catch(e) {console.log(e)}
@@ -52,11 +52,16 @@ module.exports = {
     //  network_id: "1337",       // Any network (default: none)
     // },
     development: {
-     host: "127.0.0.1",     // Localhost (default: none)
-     port: 7545,            // Standard Ethereum port (default: none)
-     network_id: "1337",       // Any network (default: none)
-    },
-    // Another network with more advanced options...
+      host: "127.0.0.1",     // Localhost (default: none)
+      port: 7545,            // Standard Ethereum port (default: none)
+      network_id: "1337",       // Any network (default: none)
+     },
+     developmentUpgrade: {
+      host: "127.0.0.1",     // Localhost (default: none)
+      port: 7545,            // Standard Ethereum port (default: none)
+      network_id: "1337",       // Any network (default: none)
+     },
+      // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
     // network_id: 1342,       // Custom network
@@ -104,7 +109,7 @@ module.exports = {
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
     bsc_testnet: {
-      provider: () => new HDWalletProvider(mnemonic, `https://data-seed-prebsc-1-s1.binance.org:8545`),
+      provider: () => new HDWalletProvider(mnemonic, `https://data-seed-prebsc-2-s1.binance.org:8545`),
       network_id: 97,
       from: fromAccount,
       // confirmations: 10,
@@ -112,7 +117,7 @@ module.exports = {
       skipDryRun: true
     },
     mumbai: {
-      provider: () => new HDWalletProvider(mnemonic, `https://rpc-mumbai.maticvigil.com/v1/`+ apiKeys.polygon),
+      provider: () => new HDWalletProvider(mnemonic, `https://rpc-mumbai.maticvigil.com/`+ apiKeys.polygon_maticRPC),
       network_id: 80001,
       from: fromAccount,
       // confirmations: 2,
@@ -135,7 +140,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.8.1",
+      version: "0.8.2",
       optimizer: {
         enabled: true,
         runs: 1000

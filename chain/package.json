@@ -1,12 +1,12 @@
 {
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
-    "@openzeppelin/contracts": "^4.4.1",
+    "@openzeppelin/contracts": "^4.6.0",
+    "@openzeppelin/contracts-upgradeable": "^4.6.0",
     "@openzeppelin/test-helpers": "^0.5.15"
-    
   },
   "devDependencies": {
+    "@openzeppelin/truffle-upgrades": "^1.15.0",
     "@truffle/hdwallet-provider": "^2.0.0"
   }
 }

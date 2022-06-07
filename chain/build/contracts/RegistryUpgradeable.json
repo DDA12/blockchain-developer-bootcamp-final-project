@@ -1,0 +1,2493 @@
+{
+  "contractName": "RegistryUpgradeable",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "previousAdmin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "AdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "beacon",
+          "type": "address"
+        }
+      ],
+      "name": "BeaconUpgraded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "version",
+          "type": "uint8"
+        }
+      ],
+      "name": "Initialized",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Paused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "Upgraded",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "proxiableUUID",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        }
+      ],
+      "name": "upgradeTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "upgradeToAndCall",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getImplementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAdmin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "changeAdmin",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.2+commit.661d1103\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"previousAdmin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"AdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beacon\",\"type\":\"address\"}],\"name\":\"BeaconUpgraded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"Upgraded\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"changeAdmin\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAdmin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getImplementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"proxiableUUID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"upgradeToAndCall\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"D Collette\",\"details\":\"Registry UUPS proxiable contracts with Access control: Owner and Admin.\",\"kind\":\"dev\",\"methods\":{\"changeAdmin(address)\":{\"details\":\"Change Admin's address: authorized account to upgrade contract implementation.Requirements: onlyAdmin.\",\"params\":{\"newAdmin\":\"address of new Admin.\"}},\"getAdmin()\":{\"details\":\"Returns Admin's address: authorized account to upgrade contract implementation.\",\"returns\":{\"_0\":\"address - Admin's address.\"}},\"getImplementation()\":{\"details\":\"Returns address of contract implementation: Implementation slot value (used by proxy to delegate calls).\",\"returns\":{\"_0\":\"address - implementation address.\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"paused()\":{\"details\":\"Returns true if the contract is paused, and false otherwise.\"},\"proxiableUUID()\":{\"details\":\"Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"upgradeTo(address)\":{\"details\":\"Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.\"},\"upgradeToAndCall(address,bytes)\":{\"details\":\"Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.\"}},\"title\":\"Abstract Registry Upgradeable Contract based on UUPS proxy pattern\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"changeAdmin(address)\":{\"notice\":\"Change Admin role's account: change authorized account to upgrade contract implementation\"},\"getAdmin()\":{\"notice\":\"Get Admin role's account: authorized account to upgrade contract implementation\"}},\"notice\":\"You can use this contract to create Registry UUPS proxiable contracts with Access control: Owner and Admin.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/RegistryUpgradeable.sol\":\"RegistryUpgradeable\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol\":{\"keccak256\":\"0x652fee292f698d8dba81bf287cb71f1682f6483b67ebe601a5f7387dcfc30b34\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://98c7bba29bcab7240cdaada7dd7cbe3529fec83314801270c46239e72a9e84d7\",\"dweb:/ipfs/QmfHCc1KMygjXchXVwafWTkFjhbb2SQ3Cu5GzRTdV4CCCh\"]},\"@openzeppelin/contracts-upgradeable/interfaces/draft-IERC1822Upgradeable.sol\":{\"keccak256\":\"0x77c89f893e403efc6929ba842b7ccf6534d4ffe03afe31670b4a528c0ad78c0f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://496bd9b3df2455d571018c09f0c6badd29713fdeb907c6aa09d8d28cb603f053\",\"dweb:/ipfs/QmXdJDyYs6WMwMh21dez2BYPxhSUaUYFMDtVNcn2cgFR79\"]},\"@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol\":{\"keccak256\":\"0x315887e846f1e5f8d8fa535a229d318bb9290aaa69485117f1ee8a9a6b3be823\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://29dda00da6d269685b555e710e4abf1c3eb6d00c15b888a7880a2f8dd3c4fdc2\",\"dweb:/ipfs/QmSqcjtdECygtT1Gy7uEo42x8542srpgGEeKKHfcnQqXgn\"]},\"@openzeppelin/contracts-upgradeable/proxy/beacon/IBeaconUpgradeable.sol\":{\"keccak256\":\"0x24b86ac8c005b8c654fbf6ac34a5a4f61580d7273541e83e013e89d66fbf0908\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4dbfe1a3b3b3fb64294ce41fd2ad362e7b7012208117864f42c1a67620a6d5c1\",\"dweb:/ipfs/QmVMU5tWt7zBQMmf5cpMX8UMHV86T3kFeTxBTBjFqVWfoJ\"]},\"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x7454006cccb737612b00104d2f606d728e2818b778e7e55542f063c614ce46ba\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6ec10894beb0f7537fba35e501fd1c5d35440e8c8f5ced1b8e57722a1d0879a8\",\"dweb:/ipfs/Qmbc3bNmtDewTGSmrPD93Ubp8saAz8xCxsgTjSmpNTqukz\"]},\"@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol\":{\"keccak256\":\"0x6e36e9b4b71de699c2f3f0d4e4d1aa0b35da99a26e8d5b91ef09ba234b4ef270\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://abfa467c53a0d60b4d09bf04aa952b1d1d44e5766fcc053aace078d7859b8419\",\"dweb:/ipfs/QmebVTZpyNxYfKYTuLMywzEJTdc1Ca8ME4xm3kR9gQgToG\"]},\"@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol\":{\"keccak256\":\"0x041af89e5e60b74e1203d5a34614c9de379726f52ecb8cf064cab78b9fdcdf9d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5a8e235e33979e564ee560e5e7c42f3d4c309698eae7b7035aaf65b0ce6253f9\",\"dweb:/ipfs/QmQKdNPLcgR6LLtS9vDRXy8jeD7gCZDTfctXiTwu6HN7M1\"]},\"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"keccak256\":\"0x55cf2bd9fc76704ddcdc19834cd288b7de00fc0f298a40ea16a954ae8991db2d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://37e4df53c8d2e3c1062c1c7b2c17366db7de03bfd2559d340ca95c588aa49c2f\",\"dweb:/ipfs/QmQ9vsG3o4wED3FRogiSUhdzJvZSjjYFtydzXvFEJtgZk4\"]},\"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol\":{\"keccak256\":\"0x963ea7f0b48b032eef72fe3a7582edf78408d6f834115b9feadd673a4d5bd149\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d6520943ea55fdf5f0bafb39ed909f64de17051bc954ff3e88c9e5621412c79c\",\"dweb:/ipfs/QmWZ4rAKTQbNG2HxGs46AcTXShsVytKeLs7CUCdCSv5N7a\"]},\"@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol\":{\"keccak256\":\"0x798741e231b22b81e2dd2eddaaf8832dee4baf5cd8e2dbaa5c1dd12a1c053c4d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c41e8a7a906b8f362c8b760a44edadc61782008ea2ecf377ac5b5325bf6c3912\",\"dweb:/ipfs/QmcXr19zuH3YLzD6RZNE6UTzvsKSckdxZQnagPoDGkCHu2\"]},\"@openzeppelin/contracts-upgradeable/utils/Create2Upgradeable.sol\":{\"keccak256\":\"0xbdec72f55ce6d1f234cde556b3e38fc0f739f46e9288cc4ae32b9334365889db\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2d5530e5685d2fe35f1c4c30c0c9307dff79d0b699ca4cca5e53a68c9800ab07\",\"dweb:/ipfs/QmPvyBNty8jiGHJyNJmeCEkvgwwySiuEyk7QrBipH52tzs\"]},\"@openzeppelin/contracts-upgradeable/utils/StorageSlotUpgradeable.sol\":{\"keccak256\":\"0x422c3d27d0d5681cea93acbb0dcb175fa5b461b5b7731da7ff77e51f0f0174c7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://feb47206935cf956f60ffd76b8bad047102c7acbf2aab10157a235b7af66fa39\",\"dweb:/ipfs/QmZQ39kpPhCdN9fyZ7BMwnK26tHjiP6QZDeL8tMSPDjxan\"]},\"project:/contracts/RegistryUpgradeable.sol\":{\"keccak256\":\"0xbed5e88a4ce94bf9fe4da0449e939748b37e59a1ba73a56e21185977baf02b25\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b86c7668eddd9f5aff7e98626839329cd8c951c3db9d0915acb9c7d7beee8e8a\",\"dweb:/ipfs/QmT1DxXm658doY2mggt5365KsU4X9mF3y5jbMpiVdVfv6E\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity 0.8.2;\r\n\r\nimport \"@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol\";\r\nimport \"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol\";\r\nimport \"@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol\";\r\nimport \"@openzeppelin/contracts-upgradeable/utils/Create2Upgradeable.sol\";\r\nimport \"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol\";\r\nimport \"@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol\";\r\n\r\n/// @title Abstract Registry Upgradeable Contract based on UUPS proxy pattern\r\n/// @author D Collette\r\n/// @notice You can use this contract to create Registry UUPS proxiable contracts with Access control: Owner and Admin.\r\n/// @dev Registry UUPS proxiable contracts with Access control: Owner and Admin.\r\n\r\nabstract contract RegistryUpgradeable is Initializable, UUPSUpgradeable, OwnableUpgradeable, PausableUpgradeable {\r\n\r\n    ///@dev Check that the execution is being performed by Admin role only\r\n    modifier onlyAdmin() {\r\n        require(_msgSender() == _getAdmin(), \"Upgradeable: caller is not the admin\");\r\n        _;\r\n    }\r\n\r\n    constructor() {\r\n    }\r\n\r\n    ///@dev Must be called by derived contract to initialize contract (Initializer modifier from initialize function in derived contract)\r\n    function __RegistryUpgradeable_init() internal onlyInitializing {\r\n        __Pausable_init();\r\n        __Ownable_init();\r\n        __UUPSUpgradeable_init();\r\n        _changeAdmin(_msgSender()); // Default Admin is Owner of contract\r\n    }\r\n\r\n    /// @dev Function that will revert when `msg.sender` is not authorized to upgrade the contract: Admin only. Called by {upgradeTo} and {upgradeToAndCall}\r\n    function _authorizeUpgrade(address) internal override onlyAdmin {}\r\n\r\n    /// @dev Returns address of contract implementation: Implementation slot value (used by proxy to delegate calls).\r\n    /// @return address - implementation address.\r\n    function getImplementation() public view returns (address) {\r\n        return _getImplementation();\r\n    }\r\n\r\n    /// @notice Get Admin role's account: authorized account to upgrade contract implementation\r\n    /// @dev Returns Admin's address: authorized account to upgrade contract implementation.\r\n    /// @return address - Admin's address.\r\n    function getAdmin() public view returns (address) {\r\n        return _getAdmin();\r\n    }\r\n\r\n    /// @notice Change Admin role's account: change authorized account to upgrade contract implementation\r\n    /// @param newAdmin address of new Admin.\r\n    /// @dev Change Admin's address: authorized account to upgrade contract implementation.\r\n    /// @dev Requirements: onlyAdmin.\r\n    function changeAdmin(address newAdmin) external onlyAdmin {\r\n        _changeAdmin(newAdmin);\r\n    }\r\n\r\n}\r\n",
+  "sourcePath": "C:\\Users\\didier.collette\\git\\blockchain-developer-bootcamp-final-project\\chain\\contracts\\RegistryUpgradeable.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/RegistryUpgradeable.sol",
+    "exportedSymbols": {
+      "AddressUpgradeable": [
+        2227
+      ],
+      "ContextUpgradeable": [
+        2269
+      ],
+      "CountersUpgradeable": [
+        2343
+      ],
+      "Create2Upgradeable": [
+        2454
+      ],
+      "ERC1967UpgradeUpgradeable": [
+        502
+      ],
+      "IBeaconUpgradeable": [
+        512
+      ],
+      "IERC1822ProxiableUpgradeable": [
+        133
+      ],
+      "Initializable": [
+        654
+      ],
+      "OwnableUpgradeable": [
+        123
+      ],
+      "PausableUpgradeable": [
+        901
+      ],
+      "RegistryUpgradeable": [
+        5621
+      ],
+      "StorageSlotUpgradeable": [
+        2514
+      ],
+      "UUPSUpgradeable": [
+        790
+      ]
+    },
+    "id": 5622,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5523,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:22:36"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol",
+        "id": 5524,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5622,
+        "sourceUnit": 791,
+        "src": "59:77:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
+        "id": 5525,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5622,
+        "sourceUnit": 655,
+        "src": "138:75:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol",
+        "id": 5526,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5622,
+        "sourceUnit": 2344,
+        "src": "215:75:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/utils/Create2Upgradeable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/utils/Create2Upgradeable.sol",
+        "id": 5527,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5622,
+        "sourceUnit": 2455,
+        "src": "292:74:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
+        "id": 5528,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5622,
+        "sourceUnit": 124,
+        "src": "368:75:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol",
+        "id": 5529,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5622,
+        "sourceUnit": 902,
+        "src": "445:78:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 5531,
+              "name": "Initializable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 654,
+              "src": "876:13:36"
+            },
+            "id": 5532,
+            "nodeType": "InheritanceSpecifier",
+            "src": "876:13:36"
+          },
+          {
+            "baseName": {
+              "id": 5533,
+              "name": "UUPSUpgradeable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 790,
+              "src": "891:15:36"
+            },
+            "id": 5534,
+            "nodeType": "InheritanceSpecifier",
+            "src": "891:15:36"
+          },
+          {
+            "baseName": {
+              "id": 5535,
+              "name": "OwnableUpgradeable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 123,
+              "src": "908:18:36"
+            },
+            "id": 5536,
+            "nodeType": "InheritanceSpecifier",
+            "src": "908:18:36"
+          },
+          {
+            "baseName": {
+              "id": 5537,
+              "name": "PausableUpgradeable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 901,
+              "src": "928:19:36"
+            },
+            "id": 5538,
+            "nodeType": "InheritanceSpecifier",
+            "src": "928:19:36"
+          }
+        ],
+        "contractDependencies": [
+          123,
+          133,
+          502,
+          654,
+          790,
+          901,
+          2269
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 5530,
+          "nodeType": "StructuredDocumentation",
+          "src": "527:306:36",
+          "text": "@title Abstract Registry Upgradeable Contract based on UUPS proxy pattern\n @author D Collette\n @notice You can use this contract to create Registry UUPS proxiable contracts with Access control: Owner and Admin.\n @dev Registry UUPS proxiable contracts with Access control: Owner and Admin."
+        },
+        "fullyImplemented": true,
+        "id": 5621,
+        "linearizedBaseContracts": [
+          5621,
+          901,
+          123,
+          2269,
+          790,
+          502,
+          133,
+          654
+        ],
+        "name": "RegistryUpgradeable",
+        "nameLocation": "853:19:36",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 5551,
+              "nodeType": "Block",
+              "src": "1054:107:36",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 5546,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 5542,
+                            "name": "_msgSender",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2254,
+                            "src": "1073:10:36",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                              "typeString": "function () view returns (address)"
+                            }
+                          },
+                          "id": 5543,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1073:12:36",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 5544,
+                            "name": "_getAdmin",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 324,
+                            "src": "1089:9:36",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                              "typeString": "function () view returns (address)"
+                            }
+                          },
+                          "id": 5545,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1089:11:36",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1073:27:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "5570677261646561626c653a2063616c6c6572206973206e6f74207468652061646d696e",
+                        "id": 5547,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1102:38:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d80de935db8fef2747384b914b770cf0fd5b23f4e6d85d1e9cd48ef29138db44",
+                          "typeString": "literal_string \"Upgradeable: caller is not the admin\""
+                        },
+                        "value": "Upgradeable: caller is not the admin"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d80de935db8fef2747384b914b770cf0fd5b23f4e6d85d1e9cd48ef29138db44",
+                          "typeString": "literal_string \"Upgradeable: caller is not the admin\""
+                        }
+                      ],
+                      "id": 5541,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1065:7:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 5548,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1065:76:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5549,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1065:76:36"
+                },
+                {
+                  "id": 5550,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1152:1:36"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5539,
+              "nodeType": "StructuredDocumentation",
+              "src": "957:70:36",
+              "text": "@dev Check that the execution is being performed by Admin role only"
+            },
+            "id": 5552,
+            "name": "onlyAdmin",
+            "nameLocation": "1042:9:36",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 5540,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1051:2:36"
+            },
+            "src": "1033:128:36",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5555,
+              "nodeType": "Block",
+              "src": "1183:8:36",
+              "statements": []
+            },
+            "id": 5556,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5553,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1180:2:36"
+            },
+            "returnParameters": {
+              "id": 5554,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1183:0:36"
+            },
+            "scope": 5621,
+            "src": "1169:22:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5576,
+              "nodeType": "Block",
+              "src": "1402:173:36",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 5562,
+                      "name": "__Pausable_init",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 821,
+                      "src": "1413:15:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 5563,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1413:17:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5564,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1413:17:36"
+                },
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 5565,
+                      "name": "__Ownable_init",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 26,
+                      "src": "1441:14:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 5566,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1441:16:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5567,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1441:16:36"
+                },
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 5568,
+                      "name": "__UUPSUpgradeable_init",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 672,
+                      "src": "1468:22:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 5569,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1468:24:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5570,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1468:24:36"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 5572,
+                          "name": "_msgSender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2254,
+                          "src": "1516:10:36",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                            "typeString": "function () view returns (address)"
+                          }
+                        },
+                        "id": 5573,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1516:12:36",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 5571,
+                      "name": "_changeAdmin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 367,
+                      "src": "1503:12:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 5574,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1503:26:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5575,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1503:26:36"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5557,
+              "nodeType": "StructuredDocumentation",
+              "src": "1199:133:36",
+              "text": "@dev Must be called by derived contract to initialize contract (Initializer modifier from initialize function in derived contract)"
+            },
+            "id": 5577,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 5560,
+                "modifierName": {
+                  "id": 5559,
+                  "name": "onlyInitializing",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 597,
+                  "src": "1385:16:36"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1385:16:36"
+              }
+            ],
+            "name": "__RegistryUpgradeable_init",
+            "nameLocation": "1347:26:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5558,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1373:2:36"
+            },
+            "returnParameters": {
+              "id": 5561,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1402:0:36"
+            },
+            "scope": 5621,
+            "src": "1338:237:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "baseFunctions": [
+              784
+            ],
+            "body": {
+              "id": 5586,
+              "nodeType": "Block",
+              "src": "1805:2:36",
+              "statements": []
+            },
+            "documentation": {
+              "id": 5578,
+              "nodeType": "StructuredDocumentation",
+              "src": "1583:152:36",
+              "text": "@dev Function that will revert when `msg.sender` is not authorized to upgrade the contract: Admin only. Called by {upgradeTo} and {upgradeToAndCall}"
+            },
+            "id": 5587,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 5584,
+                "modifierName": {
+                  "id": 5583,
+                  "name": "onlyAdmin",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 5552,
+                  "src": "1795:9:36"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1795:9:36"
+              }
+            ],
+            "name": "_authorizeUpgrade",
+            "nameLocation": "1750:17:36",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 5582,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1786:8:36"
+            },
+            "parameters": {
+              "id": 5581,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5580,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5587,
+                  "src": "1768:7:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5579,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1768:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1767:9:36"
+            },
+            "returnParameters": {
+              "id": 5585,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1805:0:36"
+            },
+            "scope": 5621,
+            "src": "1741:66:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5596,
+              "nodeType": "Block",
+              "src": "2044:46:36",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 5593,
+                      "name": "_getImplementation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 180,
+                      "src": "2062:18:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                        "typeString": "function () view returns (address)"
+                      }
+                    },
+                    "id": 5594,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2062:20:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 5592,
+                  "id": 5595,
+                  "nodeType": "Return",
+                  "src": "2055:27:36"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5588,
+              "nodeType": "StructuredDocumentation",
+              "src": "1815:164:36",
+              "text": "@dev Returns address of contract implementation: Implementation slot value (used by proxy to delegate calls).\n @return address - implementation address."
+            },
+            "functionSelector": "aaf10f42",
+            "id": 5597,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getImplementation",
+            "nameLocation": "1994:17:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5589,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2011:2:36"
+            },
+            "returnParameters": {
+              "id": 5592,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5591,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5597,
+                  "src": "2035:7:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5590,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2035:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2034:9:36"
+            },
+            "scope": 5621,
+            "src": "1985:105:36",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5606,
+              "nodeType": "Block",
+              "src": "2383:37:36",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 5603,
+                      "name": "_getAdmin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 324,
+                      "src": "2401:9:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                        "typeString": "function () view returns (address)"
+                      }
+                    },
+                    "id": 5604,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2401:11:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 5602,
+                  "id": 5605,
+                  "nodeType": "Return",
+                  "src": "2394:18:36"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5598,
+              "nodeType": "StructuredDocumentation",
+              "src": "2098:229:36",
+              "text": "@notice Get Admin role's account: authorized account to upgrade contract implementation\n @dev Returns Admin's address: authorized account to upgrade contract implementation.\n @return address - Admin's address."
+            },
+            "functionSelector": "6e9960c3",
+            "id": 5607,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAdmin",
+            "nameLocation": "2342:8:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5599,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2350:2:36"
+            },
+            "returnParameters": {
+              "id": 5602,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5601,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5607,
+                  "src": "2374:7:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5600,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2374:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2373:9:36"
+            },
+            "scope": 5621,
+            "src": "2333:87:36",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5619,
+              "nodeType": "Block",
+              "src": "2772:41:36",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 5616,
+                        "name": "newAdmin",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5610,
+                        "src": "2796:8:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 5615,
+                      "name": "_changeAdmin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 367,
+                      "src": "2783:12:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 5617,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2783:22:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5618,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2783:22:36"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5608,
+              "nodeType": "StructuredDocumentation",
+              "src": "2428:280:36",
+              "text": "@notice Change Admin role's account: change authorized account to upgrade contract implementation\n @param newAdmin address of new Admin.\n @dev Change Admin's address: authorized account to upgrade contract implementation.\n @dev Requirements: onlyAdmin."
+            },
+            "functionSelector": "8f283970",
+            "id": 5620,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 5613,
+                "modifierName": {
+                  "id": 5612,
+                  "name": "onlyAdmin",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 5552,
+                  "src": "2762:9:36"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2762:9:36"
+              }
+            ],
+            "name": "changeAdmin",
+            "nameLocation": "2723:11:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5611,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5610,
+                  "mutability": "mutable",
+                  "name": "newAdmin",
+                  "nameLocation": "2743:8:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5620,
+                  "src": "2735:16:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5609,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2735:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2734:18:36"
+            },
+            "returnParameters": {
+              "id": 5614,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2772:0:36"
+            },
+            "scope": 5621,
+            "src": "2714:99:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5622,
+        "src": "835:1983:36"
+      }
+    ],
+    "src": "33:2787:36"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/RegistryUpgradeable.sol",
+    "exportedSymbols": {
+      "AddressUpgradeable": [
+        2227
+      ],
+      "ContextUpgradeable": [
+        2269
+      ],
+      "CountersUpgradeable": [
+        2343
+      ],
+      "Create2Upgradeable": [
+        2454
+      ],
+      "ERC1967UpgradeUpgradeable": [
+        502
+      ],
+      "IBeaconUpgradeable": [
+        512
+      ],
+      "IERC1822ProxiableUpgradeable": [
+        133
+      ],
+      "Initializable": [
+        654
+      ],
+      "OwnableUpgradeable": [
+        123
+      ],
+      "PausableUpgradeable": [
+        901
+      ],
+      "RegistryUpgradeable": [
+        5621
+      ],
+      "StorageSlotUpgradeable": [
+        2514
+      ],
+      "UUPSUpgradeable": [
+        790
+      ]
+    },
+    "id": 5622,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5523,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:22:36"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol",
+        "id": 5524,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5622,
+        "sourceUnit": 791,
+        "src": "59:77:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol",
+        "id": 5525,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5622,
+        "sourceUnit": 655,
+        "src": "138:75:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol",
+        "id": 5526,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5622,
+        "sourceUnit": 2344,
+        "src": "215:75:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/utils/Create2Upgradeable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/utils/Create2Upgradeable.sol",
+        "id": 5527,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5622,
+        "sourceUnit": 2455,
+        "src": "292:74:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
+        "id": 5528,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5622,
+        "sourceUnit": 124,
+        "src": "368:75:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol",
+        "file": "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol",
+        "id": 5529,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5622,
+        "sourceUnit": 902,
+        "src": "445:78:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 5531,
+              "name": "Initializable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 654,
+              "src": "876:13:36"
+            },
+            "id": 5532,
+            "nodeType": "InheritanceSpecifier",
+            "src": "876:13:36"
+          },
+          {
+            "baseName": {
+              "id": 5533,
+              "name": "UUPSUpgradeable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 790,
+              "src": "891:15:36"
+            },
+            "id": 5534,
+            "nodeType": "InheritanceSpecifier",
+            "src": "891:15:36"
+          },
+          {
+            "baseName": {
+              "id": 5535,
+              "name": "OwnableUpgradeable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 123,
+              "src": "908:18:36"
+            },
+            "id": 5536,
+            "nodeType": "InheritanceSpecifier",
+            "src": "908:18:36"
+          },
+          {
+            "baseName": {
+              "id": 5537,
+              "name": "PausableUpgradeable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 901,
+              "src": "928:19:36"
+            },
+            "id": 5538,
+            "nodeType": "InheritanceSpecifier",
+            "src": "928:19:36"
+          }
+        ],
+        "contractDependencies": [
+          123,
+          133,
+          502,
+          654,
+          790,
+          901,
+          2269
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 5530,
+          "nodeType": "StructuredDocumentation",
+          "src": "527:306:36",
+          "text": "@title Abstract Registry Upgradeable Contract based on UUPS proxy pattern\n @author D Collette\n @notice You can use this contract to create Registry UUPS proxiable contracts with Access control: Owner and Admin.\n @dev Registry UUPS proxiable contracts with Access control: Owner and Admin."
+        },
+        "fullyImplemented": true,
+        "id": 5621,
+        "linearizedBaseContracts": [
+          5621,
+          901,
+          123,
+          2269,
+          790,
+          502,
+          133,
+          654
+        ],
+        "name": "RegistryUpgradeable",
+        "nameLocation": "853:19:36",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 5551,
+              "nodeType": "Block",
+              "src": "1054:107:36",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 5546,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 5542,
+                            "name": "_msgSender",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2254,
+                            "src": "1073:10:36",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                              "typeString": "function () view returns (address)"
+                            }
+                          },
+                          "id": 5543,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1073:12:36",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 5544,
+                            "name": "_getAdmin",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 324,
+                            "src": "1089:9:36",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                              "typeString": "function () view returns (address)"
+                            }
+                          },
+                          "id": 5545,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1089:11:36",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1073:27:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "5570677261646561626c653a2063616c6c6572206973206e6f74207468652061646d696e",
+                        "id": 5547,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1102:38:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d80de935db8fef2747384b914b770cf0fd5b23f4e6d85d1e9cd48ef29138db44",
+                          "typeString": "literal_string \"Upgradeable: caller is not the admin\""
+                        },
+                        "value": "Upgradeable: caller is not the admin"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d80de935db8fef2747384b914b770cf0fd5b23f4e6d85d1e9cd48ef29138db44",
+                          "typeString": "literal_string \"Upgradeable: caller is not the admin\""
+                        }
+                      ],
+                      "id": 5541,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "1065:7:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 5548,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1065:76:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5549,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1065:76:36"
+                },
+                {
+                  "id": 5550,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1152:1:36"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5539,
+              "nodeType": "StructuredDocumentation",
+              "src": "957:70:36",
+              "text": "@dev Check that the execution is being performed by Admin role only"
+            },
+            "id": 5552,
+            "name": "onlyAdmin",
+            "nameLocation": "1042:9:36",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 5540,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1051:2:36"
+            },
+            "src": "1033:128:36",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5555,
+              "nodeType": "Block",
+              "src": "1183:8:36",
+              "statements": []
+            },
+            "id": 5556,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5553,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1180:2:36"
+            },
+            "returnParameters": {
+              "id": 5554,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1183:0:36"
+            },
+            "scope": 5621,
+            "src": "1169:22:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5576,
+              "nodeType": "Block",
+              "src": "1402:173:36",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 5562,
+                      "name": "__Pausable_init",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 821,
+                      "src": "1413:15:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 5563,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1413:17:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5564,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1413:17:36"
+                },
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 5565,
+                      "name": "__Ownable_init",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 26,
+                      "src": "1441:14:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 5566,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1441:16:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5567,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1441:16:36"
+                },
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 5568,
+                      "name": "__UUPSUpgradeable_init",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 672,
+                      "src": "1468:22:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 5569,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1468:24:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5570,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1468:24:36"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 5572,
+                          "name": "_msgSender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2254,
+                          "src": "1516:10:36",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                            "typeString": "function () view returns (address)"
+                          }
+                        },
+                        "id": 5573,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1516:12:36",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 5571,
+                      "name": "_changeAdmin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 367,
+                      "src": "1503:12:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 5574,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1503:26:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5575,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1503:26:36"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5557,
+              "nodeType": "StructuredDocumentation",
+              "src": "1199:133:36",
+              "text": "@dev Must be called by derived contract to initialize contract (Initializer modifier from initialize function in derived contract)"
+            },
+            "id": 5577,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 5560,
+                "modifierName": {
+                  "id": 5559,
+                  "name": "onlyInitializing",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 597,
+                  "src": "1385:16:36"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1385:16:36"
+              }
+            ],
+            "name": "__RegistryUpgradeable_init",
+            "nameLocation": "1347:26:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5558,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1373:2:36"
+            },
+            "returnParameters": {
+              "id": 5561,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1402:0:36"
+            },
+            "scope": 5621,
+            "src": "1338:237:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "baseFunctions": [
+              784
+            ],
+            "body": {
+              "id": 5586,
+              "nodeType": "Block",
+              "src": "1805:2:36",
+              "statements": []
+            },
+            "documentation": {
+              "id": 5578,
+              "nodeType": "StructuredDocumentation",
+              "src": "1583:152:36",
+              "text": "@dev Function that will revert when `msg.sender` is not authorized to upgrade the contract: Admin only. Called by {upgradeTo} and {upgradeToAndCall}"
+            },
+            "id": 5587,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 5584,
+                "modifierName": {
+                  "id": 5583,
+                  "name": "onlyAdmin",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 5552,
+                  "src": "1795:9:36"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1795:9:36"
+              }
+            ],
+            "name": "_authorizeUpgrade",
+            "nameLocation": "1750:17:36",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 5582,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1786:8:36"
+            },
+            "parameters": {
+              "id": 5581,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5580,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5587,
+                  "src": "1768:7:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5579,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1768:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1767:9:36"
+            },
+            "returnParameters": {
+              "id": 5585,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1805:0:36"
+            },
+            "scope": 5621,
+            "src": "1741:66:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5596,
+              "nodeType": "Block",
+              "src": "2044:46:36",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 5593,
+                      "name": "_getImplementation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 180,
+                      "src": "2062:18:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                        "typeString": "function () view returns (address)"
+                      }
+                    },
+                    "id": 5594,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2062:20:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 5592,
+                  "id": 5595,
+                  "nodeType": "Return",
+                  "src": "2055:27:36"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5588,
+              "nodeType": "StructuredDocumentation",
+              "src": "1815:164:36",
+              "text": "@dev Returns address of contract implementation: Implementation slot value (used by proxy to delegate calls).\n @return address - implementation address."
+            },
+            "functionSelector": "aaf10f42",
+            "id": 5597,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getImplementation",
+            "nameLocation": "1994:17:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5589,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2011:2:36"
+            },
+            "returnParameters": {
+              "id": 5592,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5591,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5597,
+                  "src": "2035:7:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5590,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2035:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2034:9:36"
+            },
+            "scope": 5621,
+            "src": "1985:105:36",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5606,
+              "nodeType": "Block",
+              "src": "2383:37:36",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 5603,
+                      "name": "_getAdmin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 324,
+                      "src": "2401:9:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                        "typeString": "function () view returns (address)"
+                      }
+                    },
+                    "id": 5604,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2401:11:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 5602,
+                  "id": 5605,
+                  "nodeType": "Return",
+                  "src": "2394:18:36"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5598,
+              "nodeType": "StructuredDocumentation",
+              "src": "2098:229:36",
+              "text": "@notice Get Admin role's account: authorized account to upgrade contract implementation\n @dev Returns Admin's address: authorized account to upgrade contract implementation.\n @return address - Admin's address."
+            },
+            "functionSelector": "6e9960c3",
+            "id": 5607,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAdmin",
+            "nameLocation": "2342:8:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5599,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2350:2:36"
+            },
+            "returnParameters": {
+              "id": 5602,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5601,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5607,
+                  "src": "2374:7:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5600,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2374:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2373:9:36"
+            },
+            "scope": 5621,
+            "src": "2333:87:36",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5619,
+              "nodeType": "Block",
+              "src": "2772:41:36",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 5616,
+                        "name": "newAdmin",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5610,
+                        "src": "2796:8:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 5615,
+                      "name": "_changeAdmin",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 367,
+                      "src": "2783:12:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 5617,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2783:22:36",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5618,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2783:22:36"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5608,
+              "nodeType": "StructuredDocumentation",
+              "src": "2428:280:36",
+              "text": "@notice Change Admin role's account: change authorized account to upgrade contract implementation\n @param newAdmin address of new Admin.\n @dev Change Admin's address: authorized account to upgrade contract implementation.\n @dev Requirements: onlyAdmin."
+            },
+            "functionSelector": "8f283970",
+            "id": 5620,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 5613,
+                "modifierName": {
+                  "id": 5612,
+                  "name": "onlyAdmin",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 5552,
+                  "src": "2762:9:36"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2762:9:36"
+              }
+            ],
+            "name": "changeAdmin",
+            "nameLocation": "2723:11:36",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5611,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5610,
+                  "mutability": "mutable",
+                  "name": "newAdmin",
+                  "nameLocation": "2743:8:36",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5620,
+                  "src": "2735:16:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5609,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2735:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2734:18:36"
+            },
+            "returnParameters": {
+              "id": 5614,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2772:0:36"
+            },
+            "scope": 5621,
+            "src": "2714:99:36",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5622,
+        "src": "835:1983:36"
+      }
+    ],
+    "src": "33:2787:36"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.2+commit.661d1103.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2022-06-07T19:28:07.731Z",
+  "devdoc": {
+    "author": "D Collette",
+    "details": "Registry UUPS proxiable contracts with Access control: Owner and Admin.",
+    "kind": "dev",
+    "methods": {
+      "changeAdmin(address)": {
+        "details": "Change Admin's address: authorized account to upgrade contract implementation.Requirements: onlyAdmin.",
+        "params": {
+          "newAdmin": "address of new Admin."
+        }
+      },
+      "getAdmin()": {
+        "details": "Returns Admin's address: authorized account to upgrade contract implementation.",
+        "returns": {
+          "_0": "address - Admin's address."
+        }
+      },
+      "getImplementation()": {
+        "details": "Returns address of contract implementation: Implementation slot value (used by proxy to delegate calls).",
+        "returns": {
+          "_0": "address - implementation address."
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "paused()": {
+        "details": "Returns true if the contract is paused, and false otherwise."
+      },
+      "proxiableUUID()": {
+        "details": "Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate that the this implementation remains valid after an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      },
+      "upgradeTo(address)": {
+        "details": "Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event."
+      },
+      "upgradeToAndCall(address,bytes)": {
+        "details": "Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event."
+      }
+    },
+    "title": "Abstract Registry Upgradeable Contract based on UUPS proxy pattern",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "changeAdmin(address)": {
+        "notice": "Change Admin role's account: change authorized account to upgrade contract implementation"
+      },
+      "getAdmin()": {
+        "notice": "Get Admin role's account: authorized account to upgrade contract implementation"
+      }
+    },
+    "notice": "You can use this contract to create Registry UUPS proxiable contracts with Access control: Owner and Admin.",
+    "version": 1
+  }
+}

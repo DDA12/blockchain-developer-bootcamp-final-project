@@ -32,6 +32,9 @@
   -  ***Chains supported:***  
     The current implementation supports only [EVM compatible chains](https://coinguides.org/evm-blockchains-add-evm-network/). The project (contracts) has been deployed on the following tesnets: Ropsten, Rinkeby, Görli, Kovan, Binance Smart Chain, Polygon Matic Mumbai. All the details are [here](./docs/deployed_address.txt). The current dApp pulls from all these testnets and uses [ethers](https://github.com/ethers-io/ethers.js/) library to connect to all of them. 
 
+  -  ***Upgradeable smart contracts (UUPS and Beacon Proxies):***  
+    The current omplementations of [Registry](./chain/contracts/Registry.sol#L1) and [vcNFT](./chain/contracts/vcNFT.sol#L1) contracts integrates the ability to be upgraded. They integrate this important mechanism which facilitates the correction of bugs and addition of new functionalities/features. More details are available [here](./docs/design_pattern_decisions.md).
+
   - ***Registry of Portfolios:***  
     The [Registry](./chain/contracts/Registry.sol#L1) contract implements the Factory and the Registry patterns by standardizing the creation of the Portfolios ([vcNFT](./chain/contracts/vcNFT.sol#L1) contract for example) and making their addresses available (global access point per Chain) and therefore easily discoverable. The registry can support more than one type of Portfolio. Only approved (procedure to be determined) Portfolio contracts will be added to the list of supported contracts to make sure they implement all the required functionalities listed above. More details are available [here](./docs/design_pattern_decisions.md). Registry is available in Solidity only currently.
 
@@ -149,7 +152,8 @@ Content of [deployed_address.txt](./docs/deployed_address.txt) is:
     "networkId": 3,
     "type": "PoW",
     "chainExplorer": "https://ropsten.etherscan.io/",
-    "portfolioRegistryContractAddress": "0xd6bEC76ef61637E6c72620F40FF487078F5345dB",
+    "provider": "infura",
+    "portfolioRegistryContractAddress": "0xA56feef6FC3D42bf7d24E9f3B3bC2dbC13e32B9A",
     "ethrDidRegistryContractAddress": "0xdCa7EF03e98e0DC2B855bE647C39ABe984fcF21B"
   },
   "4": {
@@ -159,7 +163,8 @@ Content of [deployed_address.txt](./docs/deployed_address.txt) is:
     "networkId": 4,
     "type": "PoA",
     "chainExplorer": "https://ropsten.etherscan.io/",
-    "portfolioRegistryContractAddress": "0x8Ffb8aE53b540a62E142277Ad00cF6681bdC3175",
+    "provider": "infura",
+    "portfolioRegistryContractAddress": "0xb82d006A73684d84cE949A8DFf7EEf58b028Fb3D",
     "ethrDidRegistryContractAddress": "0xdCa7EF03e98e0DC2B855bE647C39ABe984fcF21B"
   },
   "5": {
@@ -169,7 +174,8 @@ Content of [deployed_address.txt](./docs/deployed_address.txt) is:
     "networkId": 5,
     "type": "PoA",
     "chainExplorer": "https://goerli.etherscan.io/",
-    "portfolioRegistryContractAddress": "0x7b369DdA17Faa1a9B04ED3429B17C37bdfc36CDb",
+    "provider": "infura",
+    "portfolioRegistryContractAddress": "0x55b3804Fe4a36632939056675fFAC82f76964BAD",
     "ethrDidRegistryContractAddress": "0xdCa7EF03e98e0DC2B855bE647C39ABe984fcF21B"
   },
   "42": {
@@ -179,7 +185,8 @@ Content of [deployed_address.txt](./docs/deployed_address.txt) is:
     "networkId": 42,
     "type": "PoA",
     "chainExplorer": "https://kovan.etherscan.io/",
-    "portfolioRegistryContractAddress": "0x2BC9fBfCA7575da311dfED34e014cA63fe8F792E",
+    "provider": "infura",
+    "portfolioRegistryContractAddress": "0x7b369DdA17Faa1a9B04ED3429B17C37bdfc36CDb",
     "ethrDidRegistryContractAddress": "0xdCa7EF03e98e0DC2B855bE647C39ABe984fcF21B"
   },
   "97": {
@@ -189,17 +196,19 @@ Content of [deployed_address.txt](./docs/deployed_address.txt) is:
     "networkId": 97,
     "type": "PoA",
     "chainExplorer": "https://testnet.bscscan.com/",
-    "portfolioRegistryContractAddress": "0x8Ffb8aE53b540a62E142277Ad00cF6681bdC3175",
+    "provider": "binance",
+    "portfolioRegistryContractAddress": "0x3EeC17fa693539F36115eA71DfAa256bfC29bE8B",
     "ethrDidRegistryContractAddress": "0xC727fc84F04D331E0687b50c1b7D5A62c4839fDa"
   },
   "80001": {
     "name": "Ethereum Testnet Polygon Matic Mumbai",
-    "chainId": "https://rpc-mumbai.maticvigil.com",
+    "chainId": "wss://ws-matic-mumbai.chainstacklabs.com/",
     "shortName": "Matic Mumbai",
     "networkId": 80001,
     "type": "PoA",
     "chainExplorer": "https://mumbai.polygonscan.com/",
-    "portfolioRegistryContractAddress": "0xDdCd2eEF0d3290547c3Db9adD99E4b54Fe78654b",
+    "provider": "polygon",
+    "portfolioRegistryContractAddress": "0x087c113fF2967D40b7065f9Ae0fbfe390FcD0b45",
     "ethrDidRegistryContractAddress": "0x3C25D4000C3AaAb2B9724697B1de757DECa3C22D"
   }
 }

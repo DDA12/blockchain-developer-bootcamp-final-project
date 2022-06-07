@@ -1,11 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.1;
+pragma solidity 0.8.2;
 
-import "@openzeppelin/contracts/utils/Counters.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/security/Pausable.sol";
-import "./ERC721Enumerable2.sol";
-
+import "./vcNFTStorage.sol";
 
 /// @title Portoflio of Verifiable NFTs Contract.
 /// @author D Collette.
@@ -13,25 +9,8 @@ import "./ERC721Enumerable2.sol";
 /// @dev Need to support Certificate Of Ownership (ownership information in COO - JSON Web Token stored on IPFS like the COA). 
 /// @dev Support of COO will make the NFT transferable to another portfolio/Chain (unchained NFT: burned from origin and created at destination): can be moved to another compatible portfolios/wallets.
 
-contract vcNFT is Ownable, Pausable, ERC721Enumerable  {
-  using Counters for Counters.Counter;
-
-  /// @dev Counter used to count the number of 'tokenId' minted.  
-  Counters.Counter private _tokenIds;
-  
-  /// @dev Counter used to count the number of 'tokenId' minted.  
-  string private _portfolioURI;
-
-  /// @dev Structure to store the Verifiable credentials of one NFT: Certificate Of Authenticity and Certificate Of Ownership.  
-  struct VerifiableCredentials {
-    // string issuerDid; // DID of Author/Artist can be extracted from COA.
-    // string subjectDid; // NFT is subject and holder at the same time - DID of NFT: can be extracted from COA.
-    string coaURI; //Current implementation: IPFS-CID of Certificate Of Authenticity (Verifiable Credentials in JSON format).
-    string cooURI; ///Current implementation : IPFS-CID of Certificate Of Onwership  (Verifiable Credential).
-  }
-
-  /// @dev Verifiabl Credentials for NFTs: mapping between a TokenID (location) and its asscoiated VerifiableCredentials.
-  mapping(uint256 => VerifiableCredentials) private _vcs; // Verifiabl Credentials of NFTs.
+contract vcNFT is vcNFTStorage  {
+  using CountersUpgradeable for CountersUpgradeable.Counter;
 
   /// @notice Emitted when a Certificate Of Authority is set.
   /// @dev Emitted when a Certificate Of Authority is set for a tokenId (location).
@@ -41,7 +20,13 @@ contract vcNFT is Ownable, Pausable, ERC721Enumerable  {
   /// @dev Emitted when PortfolioURI is set.
   event PortfolioURISet(string portfolioURI);
 
-  constructor(string memory name_, string memory symbol_, string memory portfolioURI_) ERC721(name_, symbol_) {
+  constructor() {}
+
+  /// @dev Called after creation of contract dues to the requirements of a proxy-based upgradeability pattern: delegateCalls using proxy storage  - no contructor can be used
+  function initialize(string memory name_, string memory symbol_, string memory portfolioURI_) public initializer {
+    __Pausable_init();
+    __Ownable_init();
+    __ERC721_init(name_, symbol_);
     _portfolioURI = portfolioURI_;
     emit PortfolioURISet(portfolioURI_);
   }
@@ -127,7 +112,7 @@ contract vcNFT is Ownable, Pausable, ERC721Enumerable  {
     /// @param tokenId Location of NFT to be burned.
     function burn(uint256 tokenId) external onlyOwner {
       require(_exists(tokenId), "VcNFT: burn => nonexistent token");
-      ERC721._burn(tokenId);
+      ERC721Upgradeable._burn(tokenId);
       if (bytes(_vcs[tokenId].coaURI).length != 0) {
           delete _vcs[tokenId];
       }

@@ -10,7 +10,7 @@ It provides a global access point to the created PortfolioInstances for each Cha
 When the Factory creates a new instance of a Portfolio, it registers its address internally. The Owner of a Portfolio instance can also delete it if necessary.
 
 ## 2. Upgradable Contracts Patterns: UUPS and Beacon proxies
-The current omplementations of Registry and vcNFT contracts integrates the ability to be upgraded. They integrate this important mechanism which facilitates the correction of bugs and addition of new functionalities/features.  
+The current implementations of Registry and vcNFT contracts integrate the ability to be upgraded. They integrate this important mechanism which facilitates the correction of bugs and addition of new functionalities/features.  
 - ***UUPS Proxy pattern: [EIP-1822](https://eips.ethereum.org/EIPS/eip-1822)***  
 The [Registry](../chain/contracts/Registry.sol#L1) contract follows the [UUPS Proxy](https://docs.openzeppelin.com/contracts/4.x/api/proxy#transparent-vs-uups) pattern. Only one instance of this contract exists on each Chain/Network: one [ERC1967Proxy](https://docs.openzeppelin.com/contracts/4.x/api/proxy#ERC1967Proxy) instance. The contract is written to be upgradeable by an Admin account (owner by default but can be changed) thru the [UUPSUpgradeable](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable) mechanism. Due to the requirements of a proxy-based upgradeability pattern and the EVM specifications, the contract follows these [restrictions](https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable).
 - ***Beacon Proxy pattern: [Simultaneous Upgrades](https://blog.openzeppelin.com/the-state-of-smart-contract-upgrades/#beacons***  

@@ -1,6 +1,8 @@
-﻿## **Project Description: Unchained Verifiable NFT - uvNFT**
+﻿# **Unchained Verifiable NFT (uvNFT)**
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**dApp: [https://uvnft.netlify.app/](https://uvnft.netlify.app/)**
+
+## **Project Description:**
 
 - ### **NFTs: Short Analysis**  
   NFTs have gained in popularity. They can represent digitally any unique (non-fungible) physical or digital asset on a blockchain and their ownership. NFTs have the potential for many use cases (artwork, collectibles, in-game items, intellectual property, event tickets, domain names, real estate, etc.). Among other benefits, they bring trust, transparency, security, cost savings, efficiency, provable scarcity and decentralization.  
